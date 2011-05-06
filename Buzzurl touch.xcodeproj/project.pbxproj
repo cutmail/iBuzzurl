@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		186781CD13743AF0001D60A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186781CC13743AF0001D60A2 /* UIKit.framework */; };
+		186781CF13743AF0001D60A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186781CE13743AF0001D60A2 /* Foundation.framework */; };
+		186781D113743AF0001D60A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186781D013743AF0001D60A2 /* CoreGraphics.framework */; };
+		186781D713743AF0001D60A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 186781D513743AF0001D60A2 /* InfoPlist.strings */; };
+		186781DA13743AF0001D60A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 186781D913743AF0001D60A2 /* main.m */; };
+		186781DD13743AF0001D60A2 /* Buzzurl_touchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 186781DC13743AF0001D60A2 /* Buzzurl_touchAppDelegate.m */; };
+		186781E013743AF0001D60A2 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186781DE13743AF0001D60A2 /* MainWindow.xib */; };
+		186781E313743AF0001D60A2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186781E213743AF0001D60A2 /* RootViewController.m */; };
+		186781E613743AF0001D60A2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186781E413743AF0001D60A2 /* RootViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		186781C813743AF0001D60A2 /* Buzzurl touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buzzurl touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		186781CC13743AF0001D60A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		186781CE13743AF0001D60A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		186781D013743AF0001D60A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		186781D413743AF0001D60A2 /* Buzzurl touch-Info.plist */ = {isa = PBXFileReference; path = "Buzzurl touch-Info.plist"; sourceTree = "<group>"; };
+		186781D613743AF0001D60A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		186781D813743AF0001D60A2 /* Buzzurl touch-Prefix.pch */ = {isa = PBXFileReference; path = "Buzzurl touch-Prefix.pch"; sourceTree = "<group>"; };
+		186781D913743AF0001D60A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		186781DB13743AF0001D60A2 /* Buzzurl_touchAppDelegate.h */ = {isa = PBXFileReference; path = Buzzurl_touchAppDelegate.h; sourceTree = "<group>"; };
+		186781DC13743AF0001D60A2 /* Buzzurl_touchAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Buzzurl_touchAppDelegate.m; sourceTree = "<group>"; };
+		186781DF13743AF0001D60A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		186781E113743AF0001D60A2 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		186781E213743AF0001D60A2 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		186781E513743AF0001D60A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		186781C513743AF0001D60A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186781CD13743AF0001D60A2 /* UIKit.framework in Frameworks */,
+				186781CF13743AF0001D60A2 /* Foundation.framework in Frameworks */,
+				186781D113743AF0001D60A2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		186781BD13743AF0001D60A2 = {
+			isa = PBXGroup;
+			children = (
+				186781D213743AF0001D60A2 /* Buzzurl touch */,
+				186781CB13743AF0001D60A2 /* Frameworks */,
+				186781C913743AF0001D60A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		186781C913743AF0001D60A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				186781C813743AF0001D60A2 /* Buzzurl touch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		186781CB13743AF0001D60A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				186781CC13743AF0001D60A2 /* UIKit.framework */,
+				186781CE13743AF0001D60A2 /* Foundation.framework */,
+				186781D013743AF0001D60A2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		186781D213743AF0001D60A2 /* Buzzurl touch */ = {
+			isa = PBXGroup;
+			children = (
+				186781DB13743AF0001D60A2 /* Buzzurl_touchAppDelegate.h */,
+				186781DC13743AF0001D60A2 /* Buzzurl_touchAppDelegate.m */,
+				186781DE13743AF0001D60A2 /* MainWindow.xib */,
+				186781E113743AF0001D60A2 /* RootViewController.h */,
+				186781E213743AF0001D60A2 /* RootViewController.m */,
+				186781E413743AF0001D60A2 /* RootViewController.xib */,
+				186781D313743AF0001D60A2 /* Supporting Files */,
+			);
+			path = "Buzzurl touch";
+			sourceTree = "<group>";
+		};
+		186781D313743AF0001D60A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				186781D413743AF0001D60A2 /* Buzzurl touch-Info.plist */,
+				186781D513743AF0001D60A2 /* InfoPlist.strings */,
+				186781D813743AF0001D60A2 /* Buzzurl touch-Prefix.pch */,
+				186781D913743AF0001D60A2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		186781C713743AF0001D60A2 /* Buzzurl touch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186781E913743AF0001D60A2 /* Build configuration list for PBXNativeTarget "Buzzurl touch" */;
+			buildPhases = (
+				186781C413743AF0001D60A2 /* Sources */,
+				186781C513743AF0001D60A2 /* Frameworks */,
+				186781C613743AF0001D60A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Buzzurl touch";
+			productName = "Buzzurl touch";
+			productReference = 186781C813743AF0001D60A2 /* Buzzurl touch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		186781BF13743AF0001D60A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "genesix, Inc.";
+			};
+			buildConfigurationList = 186781C213743AF0001D60A2 /* Build configuration list for PBXProject "Buzzurl touch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 186781BD13743AF0001D60A2;
+			productRefGroup = 186781C913743AF0001D60A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				186781C713743AF0001D60A2 /* Buzzurl touch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		186781C613743AF0001D60A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186781D713743AF0001D60A2 /* InfoPlist.strings in Resources */,
+				186781E013743AF0001D60A2 /* MainWindow.xib in Resources */,
+				186781E613743AF0001D60A2 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		186781C413743AF0001D60A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186781DA13743AF0001D60A2 /* main.m in Sources */,
+				186781DD13743AF0001D60A2 /* Buzzurl_touchAppDelegate.m in Sources */,
+				186781E313743AF0001D60A2 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		186781D513743AF0001D60A2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186781D613743AF0001D60A2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		186781DE13743AF0001D60A2 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186781DF13743AF0001D60A2 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		186781E413743AF0001D60A2 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186781E513743AF0001D60A2 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		186781E713743AF0001D60A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		186781E813743AF0001D60A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		186781EA13743AF0001D60A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
+				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		186781EB13743AF0001D60A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
+				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		186781C213743AF0001D60A2 /* Build configuration list for PBXProject "Buzzurl touch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186781E713743AF0001D60A2 /* Debug */,
+				186781E813743AF0001D60A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		186781E913743AF0001D60A2 /* Build configuration list for PBXNativeTarget "Buzzurl touch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186781EA13743AF0001D60A2 /* Debug */,
+				186781EB13743AF0001D60A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 186781BF13743AF0001D60A2 /* Project object */;
+}
