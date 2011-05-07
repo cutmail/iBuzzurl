@@ -7,8 +7,11 @@
 //
 
 #import "EGORefreshTableHeaderView.h"
+#import "AdMakerView.h"
+#import "AdMakerDelegate.h"
 
-@interface RootViewController : UITableViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
+@interface RootViewController : UIViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource, AdMakerDelegate>{
+    UITableView                 *_tableView;
     EGORefreshTableHeaderView   *_refreshHeaderView;
     BOOL                       _reloading;
     
@@ -18,12 +21,17 @@
     
     dispatch_queue_t main_queue;
     dispatch_queue_t timeline_queue;
+    
+    AdMakerView *AdMaker;
 }
 
+@property (nonatomic, retain) IBOutlet UITableView *_tableView;
 @property (nonatomic, retain) NSMutableArray *articleTitles;
 @property (nonatomic, retain) NSMutableArray *articleUrls;
 @property (nonatomic, retain) NSMutableArray *articleComments;
 
+- (BOOL)isLogin;
+- (void)showSettings;
 - (void)reloadTableViewDataSource;
 - (void)doneLoadingTableViewData;
 

@@ -72,7 +72,7 @@
 {
     [super viewWillAppear:animated];
     
-    self.title = @"設定";
+    self.title = NSLocalizedString(@"Settings", @"Settings");
     self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] 
                                                initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUserInfo)] autorelease];
     self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc]
@@ -116,7 +116,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"アカウント";
+    return NSLocalizedString(@"Account", @"Account");
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -135,7 +135,7 @@
         
         if ([indexPath row] == 0) {
             usernameField = [[UITextField alloc] initWithFrame:CGRectInset(cell.contentView.bounds, 20, 0)];
-            usernameField.placeholder = @"ユーザー名";
+            usernameField.placeholder = NSLocalizedString(@"Username", @"Username");
             usernameField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
             usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
             usernameField.keyboardType = UIKeyboardTypeAlphabet;    

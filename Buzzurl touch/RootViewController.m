@@ -11,9 +11,10 @@
 #import "WebViewController.h"
 #import "JSON.h"
 
-#define BUZZURL_URL_RECENT_ARTICLE @"http://api.buzzurl.jp/api/articles/v1/json/cutmail"
+#define BUZZURL_URL_RECENT_ARTICLE @"http://api.buzzurl.jp/api/articles/v1/json/%@"
 
 @implementation RootViewController
+@synthesize _tableView;
 @synthesize articleTitles;
 @synthesize articleUrls;
 @synthesize articleComments;
@@ -38,7 +39,9 @@
 }
 
 - (void)getRecentArticle {
-    NSString *jsonString = [[[NSString alloc] initWithData:[self getData:BUZZURL_URL_RECENT_ARTICLE]
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
+    NSString *url = [NSString stringWithFormat:BUZZURL_URL_RECENT_ARTICLE, username];
+    NSString *jsonString = [[[NSString alloc] initWithData:[self getData:url]
                                                   encoding:NSUTF8StringEncoding] autorelease];
     NSArray *articles = [jsonString JSONValue];
     
@@ -56,6 +59,19 @@
 
 - (void)loadNewData {
     
+//    UITableView *view = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStyleGrouped];
+//    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 50.0, 245.0, 230.0)];
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
+        
+    if ([self isLogin] == YES) {
+        
+    } else {
+        [self showSettings];
+        [self doneLoadingTableViewData];
+        return;
+    }
+    
     main_queue = dispatch_get_main_queue();
     timeline_queue = dispatch_queue_create("me.cutmail.buzzurl.timeline", NULL);
     
@@ -65,7 +81,7 @@
         dispatch_async(main_queue, ^{
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             [self doneLoadingTableViewData];
-            [self.tableView reloadData];
+            [self._tableView reloadData];
         });
     });
 
@@ -80,25 +96,35 @@
     
     self.title = @"Buzzurl touch";
 //    self.navigationController.navigationBar.tintColor = [UIColor redColor];
-    UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:@"設定" style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
+    UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
     self.navigationItem.leftBarButtonItem = prefButton;
     
     if (_refreshHeaderView == nil) {
-        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, 320.0f, self.tableView.bounds.size.height)];
+        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self._tableView.bounds.size.height, 320.0f, self._tableView.bounds.size.height)];
         view.delegate = self;
-        [self.tableView addSubview:view];
+        [self._tableView addSubview:view];
         _refreshHeaderView = view;
         [view release];
     }
     
-    [self loadNewData];
-    
-    [_refreshHeaderView refreshLastUpdatedDate];
+    AdMaker = [[AdMakerView alloc] init];
+    [AdMaker adMakerDelegate:self];
+    [AdMaker start];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];    
+    
+//    if ([self isLogin] == YES) {
+        [self loadNewData];        
+//    } else {
+//        [self showSettings];
+//    }
+    
+    [_refreshHeaderView refreshLastUpdatedDate];
+    
+    [AdMaker viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -110,6 +136,7 @@
 {
 	[super viewWillDisappear:animated];
     
+    [AdMaker viewWillDisappear];
 //    dispatch_release(timeline_queue);
 }
 
@@ -118,13 +145,29 @@
 	[super viewDidDisappear:animated];
 }
 
-/*
  // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	// Return YES for supported orientations.
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
- */
+
+- (BOOL)isLogin {
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
+    return (![username isEqualToString:@""] && username != nil);
+}
+
+- (void)showSettings {
+    SettingsViewController *settingView = [[SettingsViewController alloc] init];
+    UINavigationController* navCon = [[UINavigationController alloc]
+                                      initWithRootViewController:settingView];
+    //    navCon.navigationBar.tintColor = [UIColor redColor];
+	[self.navigationController presentModalViewController:navCon animated:YES];
+	[navCon release];
+}
+
+
+#pragma mark -
+#pragma mark TableView Datasource Methods
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60.0;
@@ -138,7 +181,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return articleTitles ? [articleTitles count] : 1;
+    return articleTitles ? [articleTitles count] : 0;
 }
 
 // Customize the appearance of table view cells.
@@ -146,12 +189,12 @@
 {
     static NSString *CellIdentifier = @"ArticleCell";
     
-    if (!articleTitles) {
-        UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.textLabel.text = @"読み込み中...";
-        cell.textLabel.textColor = [UIColor grayColor];
-        return cell;
-    }
+//    if (!articleTitles) {
+//        UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+//        cell.textLabel.text = @"読み込み中...";
+//        cell.textLabel.textColor = [UIColor grayColor];
+//        return cell;
+//    }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -219,15 +262,6 @@
     [controller release];
 }
 
-- (void)showSettings {
-    SettingsViewController *settingView = [[SettingsViewController alloc] init];
-    UINavigationController* navCon = [[UINavigationController alloc]
-                                      initWithRootViewController:settingView];
-//    navCon.navigationBar.tintColor = [UIColor redColor];
-	[self.navigationController presentModalViewController:navCon animated:YES];
-	[navCon release];
-}
-
 #pragma mark -
 #pragma mark Data Source Loading / Reloading Methods
 
@@ -238,7 +272,7 @@
 
 - (void)doneLoadingTableViewData {
     _reloading = NO;
-    [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+    [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self._tableView];
 }
 
 #pragma mark -
@@ -275,6 +309,24 @@
 
     return [NSDate date];
     
+}
+
+-(UIViewController*)currentViewControllerForAd { 
+    return self;
+}
+
+-(NSArray*)adKey {
+    return [NSArray arrayWithObjects:@"http://images.ad-maker.info/apps/049ft3kij3ln.html",@"392",@"3196",nil];
+}
+
+//広告の取得に成功 
+-(void)requestAdSuccess {
+    [AdMaker setFrame:CGRectMake(0,0,320,50)];
+	[self.view addSubview:AdMaker.view];
+}
+
+//広告の取得に失敗 
+- (void) requestAdFail {
 }
 
 #pragma mark -

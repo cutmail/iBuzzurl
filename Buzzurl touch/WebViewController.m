@@ -122,9 +122,9 @@
 }
 
 - (void)action:(id)sender {
-    sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"キャンセル"
+    sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
                           destructiveButtonTitle:nil 
-                               otherButtonTitles:@"Safariで開く", nil];
+                               otherButtonTitles:NSLocalizedString(@"Open with Safari", @"Open with Safari"), nil];
     [sheet showInView:self.view];
     [sheet release];
 }
