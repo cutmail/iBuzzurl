@@ -25,6 +25,7 @@
 		185082711375884E0020EED0 /* iconBrowsePrev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185082621375884E0020EED0 /* iconBrowsePrev@2x.png */; };
 		185082721375884E0020EED0 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 185082631375884E0020EED0 /* iTunesArtwork */; };
 		18508275137588E00020EED0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18508273137588E00020EED0 /* Localizable.strings */; };
+		18508278137595890020EED0 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18508277137595890020EED0 /* Entitlements.plist */; };
 		186781CD13743AF0001D60A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186781CC13743AF0001D60A2 /* UIKit.framework */; };
 		186781CF13743AF0001D60A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186781CE13743AF0001D60A2 /* Foundation.framework */; };
 		186781D113743AF0001D60A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186781D013743AF0001D60A2 /* CoreGraphics.framework */; };
@@ -45,7 +46,6 @@
 		1867822513744C44001D60A2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867822413744C44001D60A2 /* WebViewController.m */; };
 		18C9304B13757F5A006F5DD3 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304C13757F5A006F5DD3 /* RootViewController.xib */; };
 		18C9304E13757F63006F5DD3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304F13757F63006F5DD3 /* MainWindow.xib */; };
-		18C93066137581FD006F5DD3 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C93065137581FD006F5DD3 /* Entitlements.plist */; };
 		18E8ECD8137526E000F73ADA /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8ECD9137526E000F73ADA /* EGORefreshTableHeaderView.m */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +71,7 @@
 		185082631375884E0020EED0 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = images/iTunesArtwork; sourceTree = "<group>"; };
 		18508274137588E00020EED0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18508276137588EB0020EED0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		18508277137595890020EED0 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = SOURCE_ROOT; };
 		186781C813743AF0001D60A2 /* Buzzurl touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buzzurl touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		186781CC13743AF0001D60A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		186781CE13743AF0001D60A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,7 +107,6 @@
 		18C9304C13757F5A006F5DD3 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		18C9304F13757F63006F5DD3 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		18C9305E137581AC006F5DD3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "/Users/cutmail/iOSWorks/Buzzurl touch/Buzzurl touch/ja.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
-		18C93065137581FD006F5DD3 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		18E8ECD9137526E000F73ADA /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		18E8ECDA137526E600F73ADA /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +201,7 @@
 				186781D513743AF0001D60A2 /* InfoPlist.strings */,
 				186781D813743AF0001D60A2 /* Buzzurl touch-Prefix.pch */,
 				186781D913743AF0001D60A2 /* main.m */,
-				18C93065137581FD006F5DD3 /* Entitlements.plist */,
+				18508277137595890020EED0 /* Entitlements.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -292,6 +292,7 @@
 		186781BF13743AF0001D60A2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "genesix, Inc.";
 			};
 			buildConfigurationList = 186781C213743AF0001D60A2 /* Build configuration list for PBXProject "Buzzurl touch" */;
@@ -321,7 +322,6 @@
 				18C9304E13757F63006F5DD3 /* MainWindow.xib in Resources */,
 				18C9304B13757F5A006F5DD3 /* RootViewController.xib in Resources */,
 				186781F013743B0B001D60A2 /* SettingsViewController.xib in Resources */,
-				18C93066137581FD006F5DD3 /* Entitlements.plist in Resources */,
 				185082641375884E0020EED0 /* blueArrow.png in Resources */,
 				185082651375884E0020EED0 /* blueArrow@2x.png in Resources */,
 				185082661375884E0020EED0 /* Default.png in Resources */,
@@ -338,6 +338,7 @@
 				185082711375884E0020EED0 /* iconBrowsePrev@2x.png in Resources */,
 				185082721375884E0020EED0 /* iTunesArtwork in Resources */,
 				18508275137588E00020EED0 /* Localizable.strings in Resources */,
+				18508278137595890020EED0 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +392,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_RESOURCE_RULES_PATH = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tatsuya Arai (A669DLNGP9)";
+				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -401,6 +403,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "44087BBC-934E-4B0E-8A19-F0711AACC3F0";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -409,8 +412,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_RESOURCE_RULES_PATH = Entitlements.plist;
+				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -435,6 +439,7 @@
 					"\"$(SRCROOT)/Buzzurl touch\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -452,6 +457,7 @@
 					"\"$(SRCROOT)/Buzzurl touch\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -461,8 +467,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_RESOURCE_RULES_PATH = Entitlements.plist;
+				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -486,6 +493,7 @@
 					"\"$(SRCROOT)/Buzzurl touch\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -495,14 +503,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_RESOURCE_RULES_PATH = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tatsuya Arai (A669DLNGP9)";
+				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "44087BBC-934E-4B0E-8A19-F0711AACC3F0";
 				SDKROOT = iphoneos;
 			};
 			name = AppStore;
@@ -511,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tatsuya Arai";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
@@ -520,6 +531,8 @@
 					"\"$(SRCROOT)/Buzzurl touch\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ABD88F17-3F71-4FCF-B5B8-212547F83C31";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

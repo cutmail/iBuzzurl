@@ -43,17 +43,27 @@
     NSString *url = [NSString stringWithFormat:BUZZURL_URL_RECENT_ARTICLE, username];
     NSString *jsonString = [[[NSString alloc] initWithData:[self getData:url]
                                                   encoding:NSUTF8StringEncoding] autorelease];
-    NSArray *articles = [jsonString JSONValue];
-    
-    self.articleTitles = [[NSMutableArray alloc] init];
-    self.articleUrls = [[NSMutableArray alloc] init];
-    self.articleComments = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *article in articles) {
-        [articleTitles addObject:[article objectForKey:@"title"]];
-        [articleUrls addObject:[article objectForKey:@"url"]];
-        NSMutableString *comment = ([article objectForKey:@"comment"] == [NSNull null]) ? @"" : [article objectForKey:@"comment"];
-        [articleComments addObject:comment];
+//    NSString *data = [jsonString JSONValue];
+    if ([[jsonString JSONValue] isKindOfClass:[NSDictionary class]]) { 
+        NSDictionary *dicData = [jsonString JSONValue];
+        
+        if ([[dicData objectForKey:@"status"] isEqualToString:@"fail"]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error") message:NSLocalizedString(@"Check your username", @"Check your username") delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil]; 
+            [alert show];  
+            [alert release]; 
+        }
+    } else {
+        NSArray *articles = [jsonString JSONValue];
+        self.articleTitles = [[NSMutableArray alloc] init];
+        self.articleUrls = [[NSMutableArray alloc] init];
+        self.articleComments = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *article in articles) {
+            [articleTitles addObject:[article objectForKey:@"title"]];
+            [articleUrls addObject:[article objectForKey:@"url"]];
+            NSMutableString *comment = ([article objectForKey:@"comment"] == [NSNull null]) ? @"" : [article objectForKey:@"comment"];
+            [articleComments addObject:comment];
+        }
     }
 }
 
@@ -94,7 +104,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Buzzurl touch";
+    self.title = @"iBuzzurl";
 //    self.navigationController.navigationBar.tintColor = [UIColor redColor];
     UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
     self.navigationItem.leftBarButtonItem = prefButton;
