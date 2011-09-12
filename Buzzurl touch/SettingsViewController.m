@@ -11,8 +11,6 @@
 
 @implementation SettingsViewController
 @synthesize usernameField;
-//@synthesize userMailField;
-//@synthesize passwordField;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,8 +24,6 @@
 - (void)dealloc
 {
     [usernameField release];
-//    [userMailField release];
-//    [passwordField release];
     [super dealloc];
 }
 
@@ -106,7 +102,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -116,79 +112,58 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return NSLocalizedString(@"Account", @"Account");
+    if (section == 0) {
+        return NSLocalizedString(@"Account", @"Account");        
+    } else {
+        return @"iBuzzurlについて";
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];	
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-//        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(10, 6, 100, 30)] autorelease];
-//        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
-//        label.font = [UIFont boldSystemFontOfSize:13];
-//        [cell addSubview:label];
-        
-        if ([indexPath row] == 0) {
-            usernameField = [[UITextField alloc] initWithFrame:CGRectInset(cell.contentView.bounds, 20, 0)];
-            usernameField.placeholder = NSLocalizedString(@"Username", @"Username");
-            usernameField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-            usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
-            usernameField.keyboardType = UIKeyboardTypeAlphabet;    
-            usernameField.returnKeyType = UIReturnKeyDone;
-            usernameField.delegate = self;
-            usernameField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
+    if (indexPath.section == 0) {
+        static NSString *CellIdentifier = @"Cell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];	
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
-            [cell  addSubview:usernameField];
-//        } else if ([indexPath row] == 1) {            
-//            userMailField = [[UITextField alloc] initWithFrame:CGRectInset(cell.contentView.bounds, 20, 0)];
-//            userMailField.placeholder = @"メールアドレス";
-//            userMailField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-//            userMailField.clearButtonMode = UITextFieldViewModeWhileEditing;
-//            userMailField.returnKeyType = UIReturnKeyNext;
-//            userMailField.delegate = self;
-//            userMailField.keyboardType = UIKeyboardTypeEmailAddress;
-//            userMailField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERMAIL"];
-//
-//            [cell addSubview:userMailField];
-//        } else if ([indexPath row] == 2) {
-//            NSError *error;
-//            passwordField = [[UITextField alloc] initWithFrame:CGRectInset(cell.contentView.bounds, 20, 0)];
-//            passwordField.placeholder = @"パスワード";
-//            passwordField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-//            passwordField.clearButtonMode = UITextFieldViewModeWhileEditing;
-//            passwordField.returnKeyType = UIReturnKeyDone;
-//            passwordField.delegate = self;
-//            passwordField.secureTextEntry = YES;
-//            // ラッパークラスを利用してKeyChainから保存しているパスワードを取得する処理
-//            passwordField.text = [SFHFKeychainUtils getPasswordForUsername:[[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"] andServiceName:@"Test App" error:&error];
-//            [cell addSubview:passwordField];
+            if ([indexPath row] == 0) {
+                usernameField = [[UITextField alloc] initWithFrame:CGRectInset(cell.contentView.bounds, 20, 0)];
+                usernameField.placeholder = NSLocalizedString(@"Username", @"Username");
+                usernameField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+                usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                usernameField.keyboardType = UIKeyboardTypeAlphabet;    
+                usernameField.returnKeyType = UIReturnKeyDone;
+                usernameField.delegate = self;
+                usernameField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
+                
+                [cell addSubview:usernameField];
+            }
         }
+        return cell;
+    } else {
+        static NSString *AboutCellIdentifier = @"AboutCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:AboutCellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:AboutCellIdentifier] autorelease];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            cell.textLabel.text = @"バージョン";
+            cell.detailTextLabel.text = @"1.1.0";
+        }
+        return cell;
     }
     
-    return cell;
+    return nil;
 }
 
 
 - (void)saveUserInfo {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSString *oldUsername = [defaults objectForKey:@"USERNAME"];
-//    NSError *error;
-//    if (![oldUsername isEqualToString:usernameField.text]) {
-//        // ユーザ名が変更になっていた場合は、古いユーザ名で保存したパスワードを削除
-//        [SFHFKeychainUtils deleteItemForUsername:oldUsername andServiceName:@"Test App" error:&error];
-//    }
     
     // ユーザ名はNSUserDefaultsを使って保存
     [defaults setObject:usernameField.text forKey:@"USERNAME"];
-//    [defaults setObject:userMailField.text forKey:@"USERMAIL"];
-    
-    // ラッパークラスを利用してパスワードをKeyChainに保存
-//    [SFHFKeychainUtils storeUsername:usernameField.text andPassword:passwordField.text forServiceName:@"Test App" updateExisting:YES error:&error];
     [self.navigationItem.rightBarButtonItem setEnabled:NO];
     
     [self dismissModalViewControllerAnimated:YES];

@@ -93,6 +93,11 @@
     [web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.pageURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0]];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [super viewWillDisappear:animated];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

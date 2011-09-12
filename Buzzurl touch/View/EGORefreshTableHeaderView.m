@@ -116,7 +116,7 @@
 		[formatter setAMSymbol:@"AM"];
 		[formatter setPMSymbol:@"PM"];
 		[formatter setDateFormat:@"MM/dd/yyyy hh:mm:a"];
-		_lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:date]];
+		_lastUpdatedLabel.text = [NSString stringWithFormat:@"最終更新時間: %@", [formatter stringFromDate:date]];
 		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		[formatter release];

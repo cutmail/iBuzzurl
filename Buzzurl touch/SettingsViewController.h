@@ -11,12 +11,8 @@
 
 @interface SettingsViewController : UITableViewController <UITextFieldDelegate> {
     UITextField *usernameField;
-//    UITextField *userMailField;
-//    UITextField *passwordField;   
 }
 
 @property (nonatomic, retain) UITextField *usernameField;
-//@property (nonatomic, retain) UITextField *userMailField;
-//@property (nonatomic, retain) UITextField *passwordField;
 
 @end

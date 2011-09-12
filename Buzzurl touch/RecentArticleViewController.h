@@ -1,16 +1,17 @@
 //
-//  RootViewController.h
-//  iBuzzurl
+//  RecentArticleViewController.h
+//  Buzzurl touch
 //
-//  Created by Tatsuya Arai on 11/05/06.
-//  Copyright 2011 genesix, Inc. All rights reserved.
+//  Created by 荒井 達哉 on 11/09/12.
+//  Copyright (c) 2011年 genesix, Inc. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "EGORefreshTableHeaderView.h"
 #import "AdMakerView.h"
 #import "AdMakerDelegate.h"
 
-@interface RootViewController : UIViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource, AdMakerDelegate>{
+@interface RecentArticleViewController : UIViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource, AdMakerDelegate>{
     UITableView                 *_tableView;
     EGORefreshTableHeaderView   *_refreshHeaderView;
     BOOL                       _reloading;
@@ -32,3 +33,4 @@
 - (void)doneLoadingTableViewData;
 
 @end
+

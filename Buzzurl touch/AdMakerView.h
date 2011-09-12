@@ -1,7 +1,6 @@
 //
 //  AdMakerView.h
 //
-//
 //  Copyright 2011 NOBOT Inc. All rights reserved.
 //
 
@@ -10,17 +9,13 @@
 
 @interface AdMakerView : UIViewController <UIWebViewDelegate> {
 	id<AdMakerDelegate> delegate;
-
-	BOOL useSafari;		// とび先URLの表示にSafariを使うか
 }
 
 @property(nonatomic,assign) id <AdMakerDelegate> delegate;
 
-@property(nonatomic) BOOL useSafari;
-
--(void)adMakerDelegate:(id)_delegate;
+-(void)setAdMakerDelegate:(id)_delegate;
 -(void)setFrame:(CGRect)frame;
--(void)start;	// 表示開始
+-(void)start;
 
 - (void)viewWillAppear;
 - (void)viewWillDisappear;

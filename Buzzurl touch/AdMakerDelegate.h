@@ -13,16 +13,15 @@
 
 @required
 
--(NSArray*)adKey;
--(UIViewController*)currentViewControllerForAd;
+-(NSArray*)adKeyForAdMakerView:(AdMakerView*)view;
+-(UIViewController*)currentViewControllerForAdMakerView:(AdMakerView*)view;
+
 
 @optional
 
-// Sent when an ad request loaded an ad; this is a good opportunity to add
-// this view to the hierachy, if it has not yet been added.
-- (void)requestAdSuccess;
+- (void)didLoadAdMakerView:(AdMakerView*)view;
 
-// Sent when an ad request failed to load an ad.
-- (void)requestAdFail;
+- (void)didFailedLoadAdMakerView:(AdMakerView*)view;
+
 
 @end

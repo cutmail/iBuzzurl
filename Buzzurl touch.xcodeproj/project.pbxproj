@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1804B30D137542CC00E1F54B /* libAdMaker_dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1804B30B137542CC00E1F54B /* libAdMaker_dev.a */; };
-		1804B30E137542CC00E1F54B /* libAdMaker_sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1804B30C137542CC00E1F54B /* libAdMaker_sim.a */; };
 		185082641375884E0020EED0 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 185082551375884E0020EED0 /* blueArrow.png */; };
 		185082651375884E0020EED0 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185082561375884E0020EED0 /* blueArrow@2x.png */; };
 		185082661375884E0020EED0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 185082571375884E0020EED0 /* Default.png */; };
@@ -44,16 +42,19 @@
 		1867821813743C01001D60A2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1867821713743C01001D60A2 /* Security.framework */; };
 		1867821A13743C08001D60A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1867821913743C08001D60A2 /* QuartzCore.framework */; };
 		1867822513744C44001D60A2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867822413744C44001D60A2 /* WebViewController.m */; };
+		187AE797141DEFFA0065D960 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 187AE796141DEFFA0065D960 /* Article.m */; };
+		187AE7BB141DFD6F0065D960 /* RecentArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187AE7B9141DFD6F0065D960 /* RecentArticleViewController.m */; };
+		187AE7BC141DFD6F0065D960 /* RecentArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187AE7BA141DFD6F0065D960 /* RecentArticleViewController.xib */; };
+		1899888C141E1822006FB745 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1899888B141E1822006FB745 /* WebViewController.xib */; };
+		18AE580D141D1B0100C71E23 /* Buzzurl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AE580C141D1B0100C71E23 /* Buzzurl.m */; };
+		18C0BDBE141E3F7D004448BF /* libAdMaker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C0BDBD141E3F7D004448BF /* libAdMaker.a */; };
+		18C0BDC2141E4337004448BF /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C0BDC1141E4337004448BF /* TDBadgedCell.m */; };
 		18C9304B13757F5A006F5DD3 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304C13757F5A006F5DD3 /* RootViewController.xib */; };
 		18C9304E13757F63006F5DD3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304F13757F63006F5DD3 /* MainWindow.xib */; };
 		18E8ECD8137526E000F73ADA /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8ECD9137526E000F73ADA /* EGORefreshTableHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1804B309137542CC00E1F54B /* AdMakerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMakerDelegate.h; sourceTree = "<group>"; };
-		1804B30A137542CC00E1F54B /* AdMakerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMakerView.h; sourceTree = "<group>"; };
-		1804B30B137542CC00E1F54B /* libAdMaker_dev.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMaker_dev.a; sourceTree = "<group>"; };
-		1804B30C137542CC00E1F54B /* libAdMaker_sim.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMaker_sim.a; sourceTree = "<group>"; };
 		185082551375884E0020EED0 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueArrow.png; path = images/blueArrow.png; sourceTree = "<group>"; };
 		185082561375884E0020EED0 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueArrow@2x.png"; path = "images/blueArrow@2x.png"; sourceTree = "<group>"; };
 		185082571375884E0020EED0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = images/Default.png; sourceTree = "<group>"; };
@@ -104,6 +105,19 @@
 		1867821913743C08001D60A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1867822313744C44001D60A2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		1867822413744C44001D60A2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		187AE795141DEFFA0065D960 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		187AE796141DEFFA0065D960 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		187AE7B8141DFD6F0065D960 /* RecentArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentArticleViewController.h; sourceTree = "<group>"; };
+		187AE7B9141DFD6F0065D960 /* RecentArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentArticleViewController.m; sourceTree = "<group>"; };
+		187AE7BA141DFD6F0065D960 /* RecentArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentArticleViewController.xib; sourceTree = "<group>"; };
+		1899888B141E1822006FB745 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		18AE580B141D1B0100C71E23 /* Buzzurl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buzzurl.h; sourceTree = "<group>"; };
+		18AE580C141D1B0100C71E23 /* Buzzurl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buzzurl.m; sourceTree = "<group>"; };
+		18C0BDBB141E3F7D004448BF /* AdMakerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMakerDelegate.h; sourceTree = "<group>"; };
+		18C0BDBC141E3F7D004448BF /* AdMakerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMakerView.h; sourceTree = "<group>"; };
+		18C0BDBD141E3F7D004448BF /* libAdMaker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMaker.a; sourceTree = "<group>"; };
+		18C0BDC0141E4337004448BF /* TDBadgedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBadgedCell.h; sourceTree = "<group>"; };
+		18C0BDC1141E4337004448BF /* TDBadgedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBadgedCell.m; sourceTree = "<group>"; };
 		18C9304C13757F5A006F5DD3 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		18C9304F13757F63006F5DD3 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		18C9305E137581AC006F5DD3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "/Users/cutmail/iOSWorks/Buzzurl touch/Buzzurl touch/ja.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
@@ -121,8 +135,7 @@
 				186781CD13743AF0001D60A2 /* UIKit.framework in Frameworks */,
 				186781CF13743AF0001D60A2 /* Foundation.framework in Frameworks */,
 				186781D113743AF0001D60A2 /* CoreGraphics.framework in Frameworks */,
-				1804B30D137542CC00E1F54B /* libAdMaker_dev.a in Frameworks */,
-				1804B30E137542CC00E1F54B /* libAdMaker_sim.a in Frameworks */,
+				18C0BDBE141E3F7D004448BF /* libAdMaker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +145,9 @@
 		1804B307137542B500E1F54B /* AdMaker */ = {
 			isa = PBXGroup;
 			children = (
-				1804B309137542CC00E1F54B /* AdMakerDelegate.h */,
-				1804B30A137542CC00E1F54B /* AdMakerView.h */,
-				1804B30B137542CC00E1F54B /* libAdMaker_dev.a */,
-				1804B30C137542CC00E1F54B /* libAdMaker_sim.a */,
+				18C0BDBB141E3F7D004448BF /* AdMakerDelegate.h */,
+				18C0BDBC141E3F7D004448BF /* AdMakerView.h */,
+				18C0BDBD141E3F7D004448BF /* libAdMaker.a */,
 			);
 			name = AdMaker;
 			sourceTree = "<group>";
@@ -172,13 +184,20 @@
 		186781D213743AF0001D60A2 /* Buzzurl touch */ = {
 			isa = PBXGroup;
 			children = (
+				18C0BDBF141E42F5004448BF /* TDBadgedCell */,
 				1804B307137542B500E1F54B /* AdMaker */,
 				1867821313743BDA001D60A2 /* EGORefreshTableHeaderView */,
 				1867820F13743BCD001D60A2 /* SFHFKeychainUtils */,
 				186781FE13743BC2001D60A2 /* json-framework */,
+				187AE793141DEF560065D960 /* models */,
 				186781DB13743AF0001D60A2 /* Buzzurl_touchAppDelegate.h */,
 				186781DC13743AF0001D60A2 /* Buzzurl_touchAppDelegate.m */,
 				18C9304F13757F63006F5DD3 /* MainWindow.xib */,
+				18AE580B141D1B0100C71E23 /* Buzzurl.h */,
+				18AE580C141D1B0100C71E23 /* Buzzurl.m */,
+				187AE7B8141DFD6F0065D960 /* RecentArticleViewController.h */,
+				187AE7B9141DFD6F0065D960 /* RecentArticleViewController.m */,
+				187AE7BA141DFD6F0065D960 /* RecentArticleViewController.xib */,
 				186781FB13743B88001D60A2 /* RootViewController.h */,
 				186781FC13743B88001D60A2 /* RootViewController.m */,
 				18C9304C13757F5A006F5DD3 /* RootViewController.xib */,
@@ -187,6 +206,7 @@
 				186781EE13743B0B001D60A2 /* SettingsViewController.xib */,
 				1867822313744C44001D60A2 /* WebViewController.h */,
 				1867822413744C44001D60A2 /* WebViewController.m */,
+				1899888B141E1822006FB745 /* WebViewController.xib */,
 				186781D313743AF0001D60A2 /* Supporting Files */,
 			);
 			path = "Buzzurl touch";
@@ -266,6 +286,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		187AE793141DEF560065D960 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				187AE795141DEFFA0065D960 /* Article.h */,
+				187AE796141DEFFA0065D960 /* Article.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		18C0BDBF141E42F5004448BF /* TDBadgedCell */ = {
+			isa = PBXGroup;
+			children = (
+				18C0BDC0141E4337004448BF /* TDBadgedCell.h */,
+				18C0BDC1141E4337004448BF /* TDBadgedCell.m */,
+			);
+			name = TDBadgedCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,6 +377,8 @@
 				185082721375884E0020EED0 /* iTunesArtwork in Resources */,
 				18508275137588E00020EED0 /* Localizable.strings in Resources */,
 				18508278137595890020EED0 /* Entitlements.plist in Resources */,
+				187AE7BC141DFD6F0065D960 /* RecentArticleViewController.xib in Resources */,
+				1899888C141E1822006FB745 /* WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +401,10 @@
 				1867821213743BCD001D60A2 /* SFHFKeychainUtils.m in Sources */,
 				18E8ECD8137526E000F73ADA /* EGORefreshTableHeaderView.m in Sources */,
 				1867822513744C44001D60A2 /* WebViewController.m in Sources */,
+				18AE580D141D1B0100C71E23 /* Buzzurl.m in Sources */,
+				187AE797141DEFFA0065D960 /* Article.m in Sources */,
+				187AE7BB141DFD6F0065D960 /* RecentArticleViewController.m in Sources */,
+				18C0BDC2141E4337004448BF /* TDBadgedCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +447,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "44087BBC-934E-4B0E-8A19-F0711AACC3F0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DEF88614-AEB8-4578-A145-4322F9D0153A";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -468,7 +512,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tatsuya Arai (A669DLNGP9)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -476,6 +520,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DEF88614-AEB8-4578-A145-4322F9D0153A";
 				SDKROOT = iphoneos;
 			};
 			name = AdHoc;
@@ -504,7 +549,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tatsuya Arai (A669DLNGP9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tatsuya Arai";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -512,7 +557,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "44087BBC-934E-4B0E-8A19-F0711AACC3F0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ABD88F17-3F71-4FCF-B5B8-212547F83C31";
 				SDKROOT = iphoneos;
 			};
 			name = AppStore;
