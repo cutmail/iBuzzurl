@@ -13,6 +13,7 @@
 #import "Article.h"
 #import "Buzzurl.h"
 #import "TDBadgedCell.h"
+#import "UIColor+NSString.h"
 
 @implementation RecentArticleViewController
 @synthesize _tableView;
@@ -74,6 +75,8 @@
     UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
     self.navigationItem.leftBarButtonItem = prefButton;
     
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"BD312B"];
+    
     if (_refreshHeaderView == nil) {
         EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self._tableView.bounds.size.height, 320.0f, self._tableView.bounds.size.height)];
         view.delegate = self;
@@ -83,11 +86,6 @@
     }
     
     self.articleList = [[NSMutableArray alloc] init];
-    
-    AdMaker = [[AdMakerView alloc] init];
-    [AdMaker setAdMakerDelegate:self];
-    [AdMaker setFrame:CGRectMake(0,0,320,50)];
-    [AdMaker start];
     
     [self loadNewData];        
 }
@@ -103,8 +101,6 @@
     //    }
     
     [_refreshHeaderView refreshLastUpdatedDate];
-    
-    [AdMaker viewWillAppear];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -115,8 +111,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-    
-    [AdMaker viewWillDisappear];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -169,13 +163,6 @@
 {
     static NSString *CellIdentifier = @"ArticleCell";
     
-    //    if (!articleTitles) {
-    //        UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    //        cell.textLabel.text = @"読み込み中...";
-    //        cell.textLabel.textColor = [UIColor grayColor];
-    //        return cell;
-    //    }
-    
     TDBadgedCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
@@ -183,11 +170,10 @@
     
     Article* article = [articleList objectAtIndex:[indexPath row]];
     
-    //    cell.textLabel.text = [articleTitles objectAtIndex:[indexPath row]];
     cell.textLabel.text = article.title;
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0];
     cell.textLabel.textColor = [UIColor darkGrayColor];
     
-    //    cell.detailTextLabel.text = [articleComments objectAtIndex:[indexPath row]];
     cell.detailTextLabel.text = article.comment;
     cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0];
     cell.detailTextLabel.textColor = [UIColor grayColor];
@@ -195,50 +181,8 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.badgeString = article.userNum;
     
-    // Configure the cell.
     return cell;
 }
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete)
- {
- // Delete the row from the data source.
- [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert)
- {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
- }   
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -287,7 +231,6 @@
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView *)view {
     
     [self reloadTableViewDataSource];
-    //    [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
 }
 
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView *)view {
@@ -305,27 +248,6 @@
 -(UIViewController*)currentViewControllerForAd { 
     return self;
 }
-
-
-//////////////////
-//AdMaker delegate
-//////////////////
--(UIViewController*)currentViewControllerForAdMakerView:(AdMakerView*)view {
-	return self;
-}
-
--(NSArray*)adKeyForAdMakerView:(AdMakerView*)view {
-    return [NSArray arrayWithObjects:@"http://images.ad-maker.info/apps/049ft3kij3ln.html",@"392",@"3196",nil];
-}
-
-- (void)didLoadAdMakerView:(AdMakerView*)view {
-	[self.view addSubview:AdMaker.view];
-}
-
-- (void)didFailedLoadAdMakerView:(AdMakerView*)view {
-    
-}
-//////////////////
 
 #pragma mark -
 #pragma mark Memory management
@@ -351,7 +273,6 @@
 {
     _refreshHeaderView = nil;
     [articleList release];
-    [AdMaker release];
     [super dealloc];
 }
 

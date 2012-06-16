@@ -12,6 +12,7 @@
 #import "JSON.h"
 #import "Article.h"
 #import "Buzzurl.h"
+#import "UIColor+NSString.h"
 
 @implementation RootViewController
 @synthesize _tableView;
@@ -77,6 +78,8 @@
     UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
     self.navigationItem.leftBarButtonItem = prefButton;
     
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"BD312B"];
+    
     if (_refreshHeaderView == nil) {
         EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self._tableView.bounds.size.height, 320.0f, self._tableView.bounds.size.height)];
         view.delegate = self;
@@ -86,28 +89,19 @@
     }
     
     self.articleList = [[NSMutableArray alloc] init];
-    
-    AdMaker = [[AdMakerView alloc] init];
-    [AdMaker setAdMakerDelegate:self];
-    [AdMaker setFrame:CGRectMake(0,0,320,50)];
-    [AdMaker start];
-    
-    [self loadNewData];       
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];    
     
-//    if ([self isLogin] == YES) {
-//        [self loadNewData];        
-//    } else {
-//        [self showSettings];
-//    }
+    if ([self isLogin] == YES) {
+        [self loadNewData];        
+    } else {
+        [self showSettings];
+    }
     
     [_refreshHeaderView refreshLastUpdatedDate];
-    
-    [AdMaker viewWillAppear];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -118,8 +112,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-    
-    [AdMaker viewWillDisappear];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -127,7 +119,7 @@
 	[super viewDidDisappear:animated];
 }
 
- // Override to allow orientations other than the default portrait orientation.
+// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	// Return YES for supported orientations.
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -163,7 +155,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return articleTitles ? [articleTitles count] : 0;
+    //    return articleTitles ? [articleTitles count] : 0;
     return articleList ? [articleList count] : 0;
 }
 
@@ -172,12 +164,12 @@
 {
     static NSString *CellIdentifier = @"ArticleCell";
     
-//    if (!articleTitles) {
-//        UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//        cell.textLabel.text = @"読み込み中...";
-//        cell.textLabel.textColor = [UIColor grayColor];
-//        return cell;
-//    }
+    //    if (!articleTitles) {
+    //        UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    //        cell.textLabel.text = @"読み込み中...";
+    //        cell.textLabel.textColor = [UIColor grayColor];
+    //        return cell;
+    //    }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -186,61 +178,62 @@
     
     Article* article = [articleList objectAtIndex:[indexPath row]];
     
-//    cell.textLabel.text = [articleTitles objectAtIndex:[indexPath row]];
+    //    cell.textLabel.text = [articleTitles objectAtIndex:[indexPath row]];
     cell.textLabel.text = article.title;
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0];
     cell.textLabel.textColor = [UIColor darkGrayColor];
     
-//    cell.detailTextLabel.text = [articleComments objectAtIndex:[indexPath row]];
+    //    cell.detailTextLabel.text = [articleComments objectAtIndex:[indexPath row]];
     cell.detailTextLabel.text = article.comment;
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0];
     cell.detailTextLabel.textColor = [UIColor grayColor];
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    
     // Configure the cell.
     return cell;
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
-    {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete)
+ {
+ // Delete the row from the data source.
+ [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert)
+ {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+ }   
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -276,7 +269,7 @@
 #pragma mark UIScrollViewDelegate Methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
+    
     [_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
 }
 
@@ -293,23 +286,23 @@
     if ([self isLogin] == YES) {
         [self reloadTableViewDataSource];
     } else {
-//        [self doneLoadingTableViewData];
+        //        [self doneLoadingTableViewData];
         [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:1.0];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error") message:NSLocalizedString(@"Please Login", @"Please Login") delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil]; 
         [alert show];  
         [alert release]; 
     }
-
+    
 }
 
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView *)view {
-
+    
     return _reloading;
     
 }
 
 - (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView *)view {
-
+    
     return [NSDate date];
     
 }
@@ -318,25 +311,6 @@
     return self;
 }
 
-//////////////////
-//AdMaker delegate
-//////////////////
--(UIViewController*)currentViewControllerForAdMakerView:(AdMakerView*)view {
-	return self;
-}
-
--(NSArray*)adKeyForAdMakerView:(AdMakerView*)view {
-    return [NSArray arrayWithObjects:@"http://images.ad-maker.info/apps/049ft3kij3ln.html",@"392",@"3196",nil];
-}
-
-- (void)didLoadAdMakerView:(AdMakerView*)view {
-	[self.view addSubview:AdMaker.view];
-}
-
-- (void)didFailedLoadAdMakerView:(AdMakerView*)view {
-    
-}
-//////////////////
 
 #pragma mark -
 #pragma mark Memory management
@@ -352,7 +326,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-
+    
     _refreshHeaderView = nil;
     self.articleList = nil;
     [articleList release];
@@ -362,7 +336,6 @@
 {
     _refreshHeaderView = nil;
     [articleList release];
-    [AdMaker release];
     [super dealloc];
 }
 

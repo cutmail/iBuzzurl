@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "SFHFKeychainUtils.h"
+#import "UIColor+NSString.h"
 
 @implementation SettingsViewController
 @synthesize usernameField;
@@ -55,6 +56,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"BD312B"];
 }
 
 - (void)viewDidUnload
@@ -70,10 +73,7 @@
     
     self.title = NSLocalizedString(@"Settings", @"Settings");
     self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] 
-                                               initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUserInfo)] autorelease];
-    self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc]
-                                              initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector
-                                              (cancel)] autorelease];
+                                               initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveUserInfo)] autorelease];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -150,7 +150,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             cell.textLabel.text = @"バージョン";
-            cell.detailTextLabel.text = @"1.1.0";
+            cell.detailTextLabel.text = @"1.2.0";
         }
         return cell;
     }
@@ -169,10 +169,6 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)cancel {
-    [self dismissModalViewControllerAnimated:YES];
-}
-
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     // Saveボタンを有効にする
     [self.navigationItem.rightBarButtonItem setEnabled:YES];
@@ -182,44 +178,6 @@
     [textField resignFirstResponder];
     return YES;
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 

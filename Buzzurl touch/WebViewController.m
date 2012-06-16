@@ -7,7 +7,7 @@
 //
 
 #import "WebViewController.h"
-
+#import "UIColor+NSString.h"
 
 @implementation WebViewController
 @synthesize pageURL;
@@ -53,6 +53,7 @@
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 372.0f, 320.0f, 44.0f)];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
+    toolbar.tintColor = [UIColor colorWithHexString:@"BD312B"];
     [contentView addSubview:toolbar];
     [toolbar release];
     

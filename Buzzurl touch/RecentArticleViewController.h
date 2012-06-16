@@ -11,7 +11,7 @@
 #import "AdMakerView.h"
 #import "AdMakerDelegate.h"
 
-@interface RecentArticleViewController : UIViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource, AdMakerDelegate>{
+@interface RecentArticleViewController : UIViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
     UITableView                 *_tableView;
     EGORefreshTableHeaderView   *_refreshHeaderView;
     BOOL                       _reloading;
@@ -20,8 +20,6 @@
     
     dispatch_queue_t main_queue;
     dispatch_queue_t timeline_queue;
-    
-    AdMakerView *AdMaker;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *_tableView;
