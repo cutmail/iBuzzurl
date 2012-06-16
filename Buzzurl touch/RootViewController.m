@@ -74,7 +74,6 @@
     [super viewDidLoad];
     
     self.title = @"iBuzzurl";
-//    self.navigationController.navigationBar.tintColor = [UIColor redColor];
     UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
     self.navigationItem.leftBarButtonItem = prefButton;
     

@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "SFHFKeychainUtils.h"
 #import "UIColor+NSString.h"
+#import "AAMFeedbackViewController.h"
 
 @implementation SettingsViewController
 @synthesize usernameField;
@@ -108,14 +109,18 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    if (section == 0) {
+        return 1;
+    } else {
+        return 2;
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         return NSLocalizedString(@"Account", @"Account");        
     } else {
-        return @"iBuzzurlについて";
+        return nil;
     }
 }
 
@@ -143,14 +148,27 @@
         }
         return cell;
     } else {
-        static NSString *AboutCellIdentifier = @"AboutCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:AboutCellIdentifier];
-        if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:AboutCellIdentifier] autorelease];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
-            cell.textLabel.text = @"バージョン";
-            cell.detailTextLabel.text = @"1.2.0";
+        UITableViewCell *cell;
+        if (indexPath.row == 0) {
+            static NSString *InquiryCellIdentifier = @"InquiryCell";
+            cell = [tableView dequeueReusableCellWithIdentifier:InquiryCellIdentifier];
+            if (cell == nil) {
+                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:InquiryCellIdentifier] autorelease];
+                
+                cell.textLabel.text = @"お問い合わせ／ご要望";
+                
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }           
+        } else {
+            static NSString *AboutCellIdentifier = @"AboutCell";
+            cell = [tableView dequeueReusableCellWithIdentifier:AboutCellIdentifier];
+            if (cell == nil) {
+                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:AboutCellIdentifier] autorelease];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+                cell.textLabel.text = @"バージョン";
+                cell.detailTextLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+            }
         }
         return cell;
     }
@@ -183,14 +201,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        AAMFeedbackViewController *vc = [[[AAMFeedbackViewController alloc]init]autorelease];
+        vc.toRecipients = [NSArray arrayWithObject:@"cutmailapp@gmail.com"];
+        vc.ccRecipients = nil;
+        vc.bccRecipients = nil;
+        UINavigationController *nvc = [[[UINavigationController alloc]initWithRootViewController:vc]autorelease];
+        [self.navigationController presentModalViewController:nvc animated:YES];
+    }
 }
 
 @end

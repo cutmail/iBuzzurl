@@ -52,6 +52,9 @@
 		18C0BDC2141E4337004448BF /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C0BDC1141E4337004448BF /* TDBadgedCell.m */; };
 		18C9304B13757F5A006F5DD3 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304C13757F5A006F5DD3 /* RootViewController.xib */; };
 		18C9304E13757F63006F5DD3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304F13757F63006F5DD3 /* MainWindow.xib */; };
+		18DB9E04158CCD13004BD300 /* AAMFeedbackTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB9E01158CCD13004BD300 /* AAMFeedbackTopicsViewController.m */; };
+		18DB9E05158CCD13004BD300 /* AAMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB9E03158CCD13004BD300 /* AAMFeedbackViewController.m */; };
+		18DB9E08158CCD7B004BD300 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB9E07158CCD7B004BD300 /* MessageUI.framework */; };
 		18E8ECD8137526E000F73ADA /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8ECD9137526E000F73ADA /* EGORefreshTableHeaderView.m */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +127,11 @@
 		18C9304C13757F5A006F5DD3 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		18C9304F13757F63006F5DD3 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		18C9305E137581AC006F5DD3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "/Users/cutmail/iOSWorks/Buzzurl touch/Buzzurl touch/ja.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		18DB9E00158CCD13004BD300 /* AAMFeedbackTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMFeedbackTopicsViewController.h; sourceTree = "<group>"; };
+		18DB9E01158CCD13004BD300 /* AAMFeedbackTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMFeedbackTopicsViewController.m; sourceTree = "<group>"; };
+		18DB9E02158CCD13004BD300 /* AAMFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMFeedbackViewController.h; sourceTree = "<group>"; };
+		18DB9E03158CCD13004BD300 /* AAMFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMFeedbackViewController.m; sourceTree = "<group>"; };
+		18DB9E07158CCD7B004BD300 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		18E8ECD9137526E000F73ADA /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		18E8ECDA137526E600F73ADA /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DB9E08158CCD7B004BD300 /* MessageUI.framework in Frameworks */,
 				1867821A13743C08001D60A2 /* QuartzCore.framework in Frameworks */,
 				1867821813743C01001D60A2 /* Security.framework in Frameworks */,
 				186781CD13743AF0001D60A2 /* UIKit.framework in Frameworks */,
@@ -175,6 +184,7 @@
 		186781CB13743AF0001D60A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18DB9E07158CCD7B004BD300 /* MessageUI.framework */,
 				1867821913743C08001D60A2 /* QuartzCore.framework */,
 				1867821713743C01001D60A2 /* Security.framework */,
 				186781CC13743AF0001D60A2 /* UIKit.framework */,
@@ -187,6 +197,7 @@
 		186781D213743AF0001D60A2 /* Buzzurl touch */ = {
 			isa = PBXGroup;
 			children = (
+				18DB9DFF158CCD13004BD300 /* AAMFeedback */,
 				18C0BDBF141E42F5004448BF /* TDBadgedCell */,
 				1804B307137542B500E1F54B /* AdMaker */,
 				1867821313743BDA001D60A2 /* EGORefreshTableHeaderView */,
@@ -309,6 +320,17 @@
 			name = TDBadgedCell;
 			sourceTree = "<group>";
 		};
+		18DB9DFF158CCD13004BD300 /* AAMFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				18DB9E00158CCD13004BD300 /* AAMFeedbackTopicsViewController.h */,
+				18DB9E01158CCD13004BD300 /* AAMFeedbackTopicsViewController.m */,
+				18DB9E02158CCD13004BD300 /* AAMFeedbackViewController.h */,
+				18DB9E03158CCD13004BD300 /* AAMFeedbackViewController.m */,
+			);
+			path = AAMFeedback;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,6 +433,8 @@
 				187AE7BB141DFD6F0065D960 /* RecentArticleViewController.m in Sources */,
 				18C0BDC2141E4337004448BF /* TDBadgedCell.m in Sources */,
 				18391BE8150B231A008207C0 /* UIColor+NSString.m in Sources */,
+				18DB9E04158CCD13004BD300 /* AAMFeedbackTopicsViewController.m in Sources */,
+				18DB9E05158CCD13004BD300 /* AAMFeedbackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +513,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
 				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Buzzurl touch\"",
@@ -510,7 +534,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
 				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Buzzurl touch\"",
@@ -549,7 +573,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
 				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Buzzurl touch\"",
@@ -591,7 +615,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
 				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Buzzurl touch\"",
