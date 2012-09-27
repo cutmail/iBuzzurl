@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18145E471614A5B400596AD7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18145E461614A5B400596AD7 /* Default-568h@2x.png */; };
+		18145E4B1614B40E00596AD7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18145E4A1614B40E00596AD7 /* Crashlytics.framework */; };
 		18391BE8150B231A008207C0 /* UIColor+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 18391BE7150B231A008207C0 /* UIColor+NSString.m */; };
 		185082641375884E0020EED0 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 185082551375884E0020EED0 /* blueArrow.png */; };
 		185082651375884E0020EED0 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185082561375884E0020EED0 /* blueArrow@2x.png */; };
@@ -48,7 +50,6 @@
 		187AE7BC141DFD6F0065D960 /* RecentArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187AE7BA141DFD6F0065D960 /* RecentArticleViewController.xib */; };
 		1899888C141E1822006FB745 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1899888B141E1822006FB745 /* WebViewController.xib */; };
 		18AE580D141D1B0100C71E23 /* Buzzurl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AE580C141D1B0100C71E23 /* Buzzurl.m */; };
-		18C0BDBE141E3F7D004448BF /* libAdMaker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C0BDBD141E3F7D004448BF /* libAdMaker.a */; };
 		18C0BDC2141E4337004448BF /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C0BDC1141E4337004448BF /* TDBadgedCell.m */; };
 		18C9304B13757F5A006F5DD3 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304C13757F5A006F5DD3 /* RootViewController.xib */; };
 		18C9304E13757F63006F5DD3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304F13757F63006F5DD3 /* MainWindow.xib */; };
@@ -59,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18145E461614A5B400596AD7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		18145E4A1614B40E00596AD7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		18391BE6150B2319008207C0 /* UIColor+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NSString.h"; sourceTree = "<group>"; };
 		18391BE7150B231A008207C0 /* UIColor+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NSString.m"; sourceTree = "<group>"; };
 		185082551375884E0020EED0 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueArrow.png; path = images/blueArrow.png; sourceTree = "<group>"; };
@@ -147,7 +150,7 @@
 				186781CD13743AF0001D60A2 /* UIKit.framework in Frameworks */,
 				186781CF13743AF0001D60A2 /* Foundation.framework in Frameworks */,
 				186781D113743AF0001D60A2 /* CoreGraphics.framework in Frameworks */,
-				18C0BDBE141E3F7D004448BF /* libAdMaker.a in Frameworks */,
+				18145E4B1614B40E00596AD7 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +187,7 @@
 		186781CB13743AF0001D60A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18145E4A1614B40E00596AD7 /* Crashlytics.framework */,
 				18DB9E07158CCD7B004BD300 /* MessageUI.framework */,
 				1867821913743C08001D60A2 /* QuartzCore.framework */,
 				1867821713743C01001D60A2 /* Security.framework */,
@@ -205,9 +209,9 @@
 				186781FE13743BC2001D60A2 /* json-framework */,
 				187AE793141DEF560065D960 /* models */,
 				186781DB13743AF0001D60A2 /* Buzzurl_touchAppDelegate.h */,
+				186781DC13743AF0001D60A2 /* Buzzurl_touchAppDelegate.m */,
 				18391BE6150B2319008207C0 /* UIColor+NSString.h */,
 				18391BE7150B231A008207C0 /* UIColor+NSString.m */,
-				186781DC13743AF0001D60A2 /* Buzzurl_touchAppDelegate.m */,
 				18C9304F13757F63006F5DD3 /* MainWindow.xib */,
 				18AE580B141D1B0100C71E23 /* Buzzurl.h */,
 				18AE580C141D1B0100C71E23 /* Buzzurl.m */,
@@ -245,6 +249,7 @@
 		186781F213743B3B001D60A2 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18145E461614A5B400596AD7 /* Default-568h@2x.png */,
 				185082551375884E0020EED0 /* blueArrow.png */,
 				185082561375884E0020EED0 /* blueArrow@2x.png */,
 				185082571375884E0020EED0 /* Default.png */,
@@ -341,6 +346,7 @@
 				186781C413743AF0001D60A2 /* Sources */,
 				186781C513743AF0001D60A2 /* Frameworks */,
 				186781C613743AF0001D60A2 /* Resources */,
+				18145E491614B3C400596AD7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -406,10 +412,27 @@
 				18508278137595890020EED0 /* Entitlements.plist in Resources */,
 				187AE7BC141DFD6F0065D960 /* RecentArticleViewController.xib in Resources */,
 				1899888C141E1822006FB745 /* WebViewController.xib in Resources */,
+				18145E471614A5B400596AD7 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18145E491614B3C400596AD7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 7d0f3ef6938723ac69b416c2f9d0cfa7f9ae7437";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		186781C413743AF0001D60A2 /* Sources */ = {
@@ -480,10 +503,10 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "10530B10-9DBB-4B90-8AED-D9917C5F696E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10530B10-9DBB-4B90-8AED-D9917C5F696E";
+				PROVISIONING_PROFILE = "6131281C-CF15-440D-8C2A-0435AD89B599";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6131281C-CF15-440D-8C2A-0435AD89B599";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -502,7 +525,7 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
@@ -517,18 +540,22 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tatsuya Arai (A669DLNGP9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tatsuya Arai (A669DLNGP9)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
 				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Buzzurl touch\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "10530B10-9DBB-4B90-8AED-D9917C5F696E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10530B10-9DBB-4B90-8AED-D9917C5F696E";
+				PROVISIONING_PROFILE = "6131281C-CF15-440D-8C2A-0435AD89B599";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6131281C-CF15-440D-8C2A-0435AD89B599";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -539,10 +566,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
 				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Buzzurl touch\"",
@@ -568,10 +599,10 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "26CF97B2-D826-4051-9C42-CB1FE61B578D";
+				PROVISIONING_PROFILE = "FA7BA544-2252-4CE2-AF5F-8AAF381E6459";
 				SDKROOT = iphoneos;
 			};
 			name = AdHoc;
@@ -582,16 +613,20 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tatsuya Arai";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
 				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Buzzurl touch\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26CF97B2-D826-4051-9C42-CB1FE61B578D";
+				PROVISIONING_PROFILE = "FA7BA544-2252-4CE2-AF5F-8AAF381E6459";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -613,11 +648,11 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "00817690-FA68-4910-A19E-97263444D22C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00817690-FA68-4910-A19E-97263444D22C";
+				PROVISIONING_PROFILE = "85B39DA0-6E9D-453E-946B-9CEBEBA7E06E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "85B39DA0-6E9D-453E-946B-9CEBEBA7E06E";
 				SDKROOT = iphoneos;
 			};
 			name = AppStore;
@@ -627,17 +662,23 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tatsuya Arai";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tatsuya Arai";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buzzurl touch/Buzzurl touch-Prefix.pch";
 				INFOPLIST_FILE = "Buzzurl touch/Buzzurl touch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Buzzurl touch\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "00817690-FA68-4910-A19E-97263444D22C";
+				PROVISIONING_PROFILE = "85B39DA0-6E9D-453E-946B-9CEBEBA7E06E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "85B39DA0-6E9D-453E-946B-9CEBEBA7E06E";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

@@ -7,6 +7,7 @@
 //
 
 #import "Buzzurl_touchAppDelegate.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation Buzzurl_touchAppDelegate
 
@@ -18,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Crashlytics startWithAPIKey:@"7d0f3ef6938723ac69b416c2f9d0cfa7f9ae7437"];
+    
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
 //    self.window.rootViewController = self.navigationController;

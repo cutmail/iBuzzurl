@@ -38,14 +38,6 @@
 }
 
 - (void)loadNewData {
-            
-//    if ([self isLogin] == YES) {
-//        
-//    } else {
-////        [self showSettings];
-//        [self doneLoadingTableViewData];
-//        return;
-//    }
     
     main_queue = dispatch_get_main_queue();
     timeline_queue = dispatch_queue_create("me.cutmail.buzzurl.timeline", NULL);
@@ -95,7 +87,7 @@
     [super viewWillAppear:animated];    
     
     if ([self isLogin] == YES) {
-        [self loadNewData];        
+        [self loadNewData];
     } else {
         [self showSettings];
     }
@@ -154,7 +146,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //    return articleTitles ? [articleTitles count] : 0;
     return articleList ? [articleList count] : 0;
 }
 
@@ -163,13 +154,6 @@
 {
     static NSString *CellIdentifier = @"ArticleCell";
     
-    //    if (!articleTitles) {
-    //        UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    //        cell.textLabel.text = @"読み込み中...";
-    //        cell.textLabel.textColor = [UIColor grayColor];
-    //        return cell;
-    //    }
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
@@ -177,12 +161,10 @@
     
     Article* article = [articleList objectAtIndex:[indexPath row]];
     
-    //    cell.textLabel.text = [articleTitles objectAtIndex:[indexPath row]];
     cell.textLabel.text = article.title;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0];
     cell.textLabel.textColor = [UIColor darkGrayColor];
     
-    //    cell.detailTextLabel.text = [articleComments objectAtIndex:[indexPath row]];
     cell.detailTextLabel.text = article.comment;
     cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0];
     cell.detailTextLabel.textColor = [UIColor grayColor];
@@ -253,7 +235,7 @@
 - (void)reloadTableViewDataSource {
     if ([self isLogin] == YES) {
         _reloading = YES;
-        [self loadNewData];        
+        [self loadNewData];
     } else {
         _reloading = NO;
     }

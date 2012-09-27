@@ -40,14 +40,6 @@
 
 - (void)loadNewData {
     
-//    if ([self isLogin] == YES) {
-//        
-//    } else {
-//        [self showSettings];
-//        [self doneLoadingTableViewData];
-//        return;
-//    }
-    
     main_queue = dispatch_get_main_queue();
     timeline_queue = dispatch_queue_create("me.cutmail.buzzurl.timeline", NULL);
         
@@ -87,18 +79,12 @@
     
     self.articleList = [[NSMutableArray alloc] init];
     
-    [self loadNewData];        
+    [self loadNewData];    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];    
-    
-    //    if ([self isLogin] == YES) {
-//    [self loadNewData];        
-    //    } else {
-    //        [self showSettings];
-    //    }
+    [super viewWillAppear:animated];
     
     [_refreshHeaderView refreshLastUpdatedDate];
 }
