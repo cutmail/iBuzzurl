@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NJKWebViewProgress.h"
 
-@interface WebViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate> {
+@interface WebViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate, NJKWebViewProgressDelegate> {
     UIWebView *web;
     UILabel   *titleView;
     

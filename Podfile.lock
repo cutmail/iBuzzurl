@@ -1,0 +1,10 @@
+PODS:
+  - NJKWebViewProgress (0.1.8)
+
+DEPENDENCIES:
+  - NJKWebViewProgress
+
+SPEC CHECKSUMS:
+  NJKWebViewProgress: e009e9ec4837fcad3959e2672d5282f78148f6b9
+
+COCOAPODS: 0.28.0

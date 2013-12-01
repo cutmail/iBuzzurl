@@ -7,9 +7,14 @@
 //
 
 #import "WebViewController.h"
+
 #import "UIColor+NSString.h"
 
 @implementation WebViewController
+{
+    UIProgressView *_progressView;
+}
+
 @synthesize pageURL;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,7 +51,6 @@
     
     web = [[UIWebView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 372.0f)];
     web.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
-    web.delegate = self;
     web.scalesPageToFit = YES;
     [contentView addSubview:web];
     [web release];
@@ -74,7 +78,6 @@
     [stopButton release];
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -91,12 +94,33 @@
     self.navigationItem.titleView = titleView;
     [titleView release];
     
+    NJKWebViewProgress *progressProxy = [[NJKWebViewProgress alloc] init];
+    web.delegate = progressProxy;
+    progressProxy.webViewProxyDelegate = self;
+    progressProxy.progressDelegate = self;
+
+    CGFloat progressBarHeight = 2.5f;
+    CGRect navigationBarBounds = self.navigationController.navigationBar.bounds;
+    CGRect barFrame = CGRectMake(0, navigationBarBounds.size.height - progressBarHeight, navigationBarBounds.size.width, progressBarHeight);
+    _progressView = [[UIProgressView alloc] initWithFrame:barFrame];
+    
     [web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.pageURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0]];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar addSubview:_progressView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:animated];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    [_progressView removeFromSuperview];
 }
 
 - (void)viewDidUnload
@@ -108,6 +132,11 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
+{
+    [_progressView setProgress:progress animated:NO];
 }
 
 #pragma mark -
