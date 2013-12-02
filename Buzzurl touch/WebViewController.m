@@ -9,10 +9,11 @@
 #import "WebViewController.h"
 
 #import "UIColor+NSString.h"
+#import "NJKWebViewProgressView.h"
 
 @implementation WebViewController
 {
-    UIProgressView *_progressView;
+    NJKWebViewProgressView *_progressView;
 }
 
 @synthesize pageURL;
@@ -57,7 +58,6 @@
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 372.0f, 320.0f, 44.0f)];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
-    toolbar.tintColor = [UIColor colorWithHexString:@"BD312B"];
     [contentView addSubview:toolbar];
     [toolbar release];
     
@@ -86,11 +86,12 @@
     titleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     titleView.backgroundColor = [UIColor clearColor];
     titleView.textAlignment = UITextAlignmentCenter;
-    titleView.textColor = [UIColor whiteColor];
-    titleView.shadowColor = [UIColor darkGrayColor];
-    titleView.shadowOffset = CGSizeMake(0.0f, -1.0f);
-    titleView.font = [UIFont boldSystemFontOfSize:14.0f];
-    titleView.numberOfLines = 2;
+//    titleView.textColor = [UIColor whiteColor];
+    titleView.textColor = [UIColor darkGrayColor];
+//    titleView.shadowColor = [UIColor darkGrayColor];
+//    titleView.shadowOffset = CGSizeMake(0.0f, -1.0f);
+    titleView.font = [UIFont systemFontOfSize:14.0f];
+    titleView.numberOfLines = 1;
     self.navigationItem.titleView = titleView;
     [titleView release];
     
@@ -102,7 +103,7 @@
     CGFloat progressBarHeight = 2.5f;
     CGRect navigationBarBounds = self.navigationController.navigationBar.bounds;
     CGRect barFrame = CGRectMake(0, navigationBarBounds.size.height - progressBarHeight, navigationBarBounds.size.width, progressBarHeight);
-    _progressView = [[UIProgressView alloc] initWithFrame:barFrame];
+    _progressView = [[NJKWebViewProgressView alloc] initWithFrame:barFrame];
     
     [web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.pageURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0]];
 }
@@ -130,13 +131,12 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 -(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
 {
-    [_progressView setProgress:progress animated:NO];
+    [_progressView setProgress:progress animated:YES];
 }
 
 #pragma mark -
@@ -148,7 +148,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    titleView.text = [webView stringByEvaluatingJavaScriptFromString:@"document.title;"];
+    titleView.text = [[[webView request] URL] absoluteString];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -178,9 +178,6 @@
 }
 
 - (void)applicationDidEnterBackground:(NSNotification *)note {
-//    [alert dismissWithClickedButtonIndex:0 animated:NO];
-//    alert = nil;
-//    
     if (sheet) {
         [sheet dismissWithClickedButtonIndex:2 animated:NO];
         sheet = nil;

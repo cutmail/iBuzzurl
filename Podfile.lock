@@ -1,10 +1,18 @@
 PODS:
-  - NJKWebViewProgress (0.1.8)
+  - NJKWebViewProgress (0.2):
+    - NJKWebViewProgress/Core
+    - NJKWebViewProgress/ProgressView
+  - NJKWebViewProgress/Core (0.2)
+  - NJKWebViewProgress/ProgressView (0.2)
 
 DEPENDENCIES:
-  - NJKWebViewProgress
+  - NJKWebViewProgress (from `git@github.com:ninjinkun/NJKWebViewProgress.git`)
+
+EXTERNAL SOURCES:
+  NJKWebViewProgress:
+    :git: git@github.com:ninjinkun/NJKWebViewProgress.git
 
 SPEC CHECKSUMS:
-  NJKWebViewProgress: e009e9ec4837fcad3959e2672d5282f78148f6b9
+  NJKWebViewProgress: fd46c9489d799d97f3b09210886bf83884f6c725
 
 COCOAPODS: 0.28.0

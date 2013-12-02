@@ -63,11 +63,8 @@
     [super viewDidLoad];
     
     self.title = @"iBuzzurl";
-    //    self.navigationController.navigationBar.tintColor = [UIColor redColor];
     UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
     self.navigationItem.leftBarButtonItem = prefButton;
-    
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"BD312B"];
     
     if (_refreshHeaderView == nil) {
         EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self._tableView.bounds.size.height, 320.0f, self._tableView.bounds.size.height)];
@@ -104,9 +101,7 @@
 	[super viewDidDisappear:animated];
 }
 
-// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -119,7 +114,6 @@
     SettingsViewController *settingView = [[SettingsViewController alloc] init];
     UINavigationController* navCon = [[UINavigationController alloc]
                                       initWithRootViewController:settingView];
-    //    navCon.navigationBar.tintColor = [UIColor redColor];
 	[self.navigationController presentModalViewController:navCon animated:YES];
 	[navCon release];
 }
@@ -132,7 +126,6 @@
     return 60.0;
 }
 
-// Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -140,11 +133,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //    return articleTitles ? [articleTitles count] : 0;
     return articleList ? [articleList count] : 0;
 }
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ArticleCell";
@@ -157,12 +148,8 @@
     Article* article = [articleList objectAtIndex:[indexPath row]];
     
     cell.textLabel.text = article.title;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0];
     cell.textLabel.textColor = [UIColor darkGrayColor];
-    
-    cell.detailTextLabel.text = article.comment;
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0];
-    cell.detailTextLabel.textColor = [UIColor grayColor];
+    cell.textLabel.numberOfLines = 2;
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.badgeString = article.userNum;
@@ -240,10 +227,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload

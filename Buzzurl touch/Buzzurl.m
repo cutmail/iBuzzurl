@@ -34,8 +34,7 @@
 + (NSMutableArray *)getRecentArticle {
     NSMutableArray *resultList = [[NSMutableArray alloc] init];
     
-    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
-    NSString *url = [NSString stringWithFormat:BUZZURL_URL_RECENT_ARTICLE, username];
+    NSString *url = BUZZURL_URL_RECENT_ARTICLE;
     NSString *jsonString = [[[NSString alloc] initWithData:[self getData:url]
                                                   encoding:NSUTF8StringEncoding] autorelease];
     
