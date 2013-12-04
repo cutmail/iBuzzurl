@@ -168,7 +168,7 @@
     [defaults setObject:usernameField.text forKey:@"USERNAME"];
     [self.navigationItem.rightBarButtonItem setEnabled:NO];
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -191,7 +191,7 @@
         vc.ccRecipients = nil;
         vc.bccRecipients = nil;
         UINavigationController *nvc = [[[UINavigationController alloc]initWithRootViewController:vc]autorelease];
-        [self.navigationController presentModalViewController:nvc animated:YES];
+        [self.navigationController presentViewController:nvc animated:YES completion:nil];
     }
 }
 

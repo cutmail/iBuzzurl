@@ -7,8 +7,6 @@
 //
 
 #import "EGORefreshTableHeaderView.h"
-#import "AdMakerView.h"
-#import "AdMakerDelegate.h"
 
 @interface RootViewController : UIViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
     UITableView                 *_tableView;

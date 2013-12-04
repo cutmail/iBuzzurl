@@ -121,7 +121,7 @@
     SettingsViewController *settingView = [[SettingsViewController alloc] init];
     UINavigationController* navCon = [[UINavigationController alloc]
                                       initWithRootViewController:settingView];
-	[self.navigationController presentModalViewController:navCon animated:YES];
+    [self.navigationController presentViewController:navCon animated:YES completion:nil];
 	[navCon release];
 }
 

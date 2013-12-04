@@ -10,6 +10,7 @@
 
 #import "UIColor+NSString.h"
 #import "NJKWebViewProgressView.h"
+#import "TUSafariActivity.h"
 
 @implementation WebViewController
 {
@@ -85,7 +86,7 @@
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 45.0f, 200.0f, 36.0f)];
     titleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     titleView.backgroundColor = [UIColor clearColor];
-    titleView.textAlignment = UITextAlignmentCenter;
+    titleView.textAlignment = NSTextAlignmentCenter;
 //    titleView.textColor = [UIColor whiteColor];
     titleView.textColor = [UIColor darkGrayColor];
 //    titleView.shadowColor = [UIColor darkGrayColor];
@@ -157,35 +158,10 @@
 }
 
 - (void)action:(id)sender {
-    sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
-                          destructiveButtonTitle:nil 
-                               otherButtonTitles:NSLocalizedString(@"Open with Safari", @"Open with Safari"), nil];
-    [sheet showInView:self.view];
-    [sheet release];
-}
-
-#pragma mark -
-#pragma mark ActionSeet Methods
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.pageURL]];
-    }    
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    sheet = nil;
-}
-
-- (void)applicationDidEnterBackground:(NSNotification *)note {
-    if (sheet) {
-        [sheet dismissWithClickedButtonIndex:2 animated:NO];
-        sheet = nil;
-    }
-    
-    if (self.modalViewController) {
-        [self.modalViewController dismissModalViewControllerAnimated:NO];
-    }
+    NSArray *actItems = [NSArray arrayWithObjects:[NSURL URLWithString:self.pageURL], nil];
+    TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:actItems applicationActivities:@[safariActivity]];
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 @end
