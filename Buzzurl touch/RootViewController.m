@@ -69,8 +69,6 @@
     UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
     self.navigationItem.leftBarButtonItem = prefButton;
     
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"BD312B"];
-    
     if (_refreshHeaderView == nil) {
         EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self._tableView.bounds.size.height, 320.0f, self._tableView.bounds.size.height)];
         view.delegate = self;
@@ -110,9 +108,7 @@
 	[super viewDidDisappear:animated];
 }
 
-// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -125,8 +121,7 @@
     SettingsViewController *settingView = [[SettingsViewController alloc] init];
     UINavigationController* navCon = [[UINavigationController alloc]
                                       initWithRootViewController:settingView];
-    //    navCon.navigationBar.tintColor = [UIColor redColor];
-	[self.navigationController presentModalViewController:navCon animated:YES];
+    [self.navigationController presentViewController:navCon animated:YES completion:nil];
 	[navCon release];
 }
 
@@ -138,7 +133,6 @@
     return 60.0;
 }
 
-// Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -149,7 +143,6 @@
     return articleList ? [articleList count] : 0;
 }
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ArticleCell";
@@ -162,59 +155,15 @@
     Article* article = [articleList objectAtIndex:[indexPath row]];
     
     cell.textLabel.text = article.title;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0];
     cell.textLabel.textColor = [UIColor darkGrayColor];
     
     cell.detailTextLabel.text = article.comment;
-    cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0];
     cell.detailTextLabel.textColor = [UIColor grayColor];
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    // Configure the cell.
     return cell;
 }
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete)
- {
- // Delete the row from the data source.
- [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert)
- {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
- }   
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -298,10 +247,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload

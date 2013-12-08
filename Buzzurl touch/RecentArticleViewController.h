@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "EGORefreshTableHeaderView.h"
-#import "AdMakerView.h"
-#import "AdMakerDelegate.h"
 
 @interface RecentArticleViewController : UIViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
     UITableView                 *_tableView;

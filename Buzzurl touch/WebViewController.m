@@ -7,9 +7,16 @@
 //
 
 #import "WebViewController.h"
+
 #import "UIColor+NSString.h"
+#import "NJKWebViewProgressView.h"
+#import "TUSafariActivity.h"
 
 @implementation WebViewController
+{
+    NJKWebViewProgressView *_progressView;
+}
+
 @synthesize pageURL;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,14 +53,12 @@
     
     web = [[UIWebView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 372.0f)];
     web.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
-    web.delegate = self;
     web.scalesPageToFit = YES;
     [contentView addSubview:web];
     [web release];
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 372.0f, 320.0f, 44.0f)];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
-    toolbar.tintColor = [UIColor colorWithHexString:@"BD312B"];
     [contentView addSubview:toolbar];
     [toolbar release];
     
@@ -74,7 +79,6 @@
     [stopButton release];
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -82,21 +86,43 @@
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 45.0f, 200.0f, 36.0f)];
     titleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     titleView.backgroundColor = [UIColor clearColor];
-    titleView.textAlignment = UITextAlignmentCenter;
-    titleView.textColor = [UIColor whiteColor];
-    titleView.shadowColor = [UIColor darkGrayColor];
-    titleView.shadowOffset = CGSizeMake(0.0f, -1.0f);
-    titleView.font = [UIFont boldSystemFontOfSize:14.0f];
-    titleView.numberOfLines = 2;
+    titleView.textAlignment = NSTextAlignmentCenter;
+//    titleView.textColor = [UIColor whiteColor];
+    titleView.textColor = [UIColor darkGrayColor];
+//    titleView.shadowColor = [UIColor darkGrayColor];
+//    titleView.shadowOffset = CGSizeMake(0.0f, -1.0f);
+    titleView.font = [UIFont systemFontOfSize:14.0f];
+    titleView.numberOfLines = 1;
     self.navigationItem.titleView = titleView;
     [titleView release];
+    
+    NJKWebViewProgress *progressProxy = [[NJKWebViewProgress alloc] init];
+    web.delegate = progressProxy;
+    progressProxy.webViewProxyDelegate = self;
+    progressProxy.progressDelegate = self;
+
+    CGFloat progressBarHeight = 2.5f;
+    CGRect navigationBarBounds = self.navigationController.navigationBar.bounds;
+    CGRect barFrame = CGRectMake(0, navigationBarBounds.size.height - progressBarHeight, navigationBarBounds.size.width, progressBarHeight);
+    _progressView = [[NJKWebViewProgressView alloc] initWithFrame:barFrame];
     
     [web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.pageURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0]];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar addSubview:_progressView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:animated];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    [_progressView removeFromSuperview];
 }
 
 - (void)viewDidUnload
@@ -106,8 +132,12 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
+{
+    [_progressView setProgress:progress animated:YES];
 }
 
 #pragma mark -
@@ -119,7 +149,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    titleView.text = [webView stringByEvaluatingJavaScriptFromString:@"document.title;"];
+    titleView.text = [[[webView request] URL] absoluteString];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -128,38 +158,10 @@
 }
 
 - (void)action:(id)sender {
-    sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
-                          destructiveButtonTitle:nil 
-                               otherButtonTitles:NSLocalizedString(@"Open with Safari", @"Open with Safari"), nil];
-    [sheet showInView:self.view];
-    [sheet release];
-}
-
-#pragma mark -
-#pragma mark ActionSeet Methods
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.pageURL]];
-    }    
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    sheet = nil;
-}
-
-- (void)applicationDidEnterBackground:(NSNotification *)note {
-//    [alert dismissWithClickedButtonIndex:0 animated:NO];
-//    alert = nil;
-//    
-    if (sheet) {
-        [sheet dismissWithClickedButtonIndex:2 animated:NO];
-        sheet = nil;
-    }
-    
-    if (self.modalViewController) {
-        [self.modalViewController dismissModalViewControllerAnimated:NO];
-    }
+    NSArray *actItems = [NSArray arrayWithObjects:[NSURL URLWithString:self.pageURL], nil];
+    TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:actItems applicationActivities:@[safariActivity]];
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 @end
