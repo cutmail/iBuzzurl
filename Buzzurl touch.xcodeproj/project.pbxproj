@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18145E471614A5B400596AD7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18145E461614A5B400596AD7 /* Default-568h@2x.png */; };
-		18145E4B1614B40E00596AD7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18145E4A1614B40E00596AD7 /* Crashlytics.framework */; };
 		18391BE8150B231A008207C0 /* UIColor+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 18391BE7150B231A008207C0 /* UIColor+NSString.m */; };
 		185082641375884E0020EED0 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 185082551375884E0020EED0 /* blueArrow.png */; };
 		185082651375884E0020EED0 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185082561375884E0020EED0 /* blueArrow@2x.png */; };
@@ -143,7 +142,6 @@
 				186781CD13743AF0001D60A2 /* UIKit.framework in Frameworks */,
 				186781CF13743AF0001D60A2 /* Foundation.framework in Frameworks */,
 				186781D113743AF0001D60A2 /* CoreGraphics.framework in Frameworks */,
-				18145E4B1614B40E00596AD7 /* Crashlytics.framework in Frameworks */,
 				8EBF75B949F0455EB13F2267 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +399,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 7d0f3ef6938723ac69b416c2f9d0cfa7f9ae7437";
+			shellScript = "./Pods/CrashlyticsFramework/Crashlytics.framework/run 7d0f3ef6938723ac69b416c2f9d0cfa7f9ae7437";
 		};
 		3188F17C38594A4CB31FA425 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

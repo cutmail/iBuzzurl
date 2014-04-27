@@ -1,9 +1,10 @@
 platform :ios, "6.0"
 
-pod 'NJKWebViewProgress', :git => 'git@github.com:ninjinkun/NJKWebViewProgress.git'
+pod 'NJKWebViewProgress'
 pod 'SFHFKeychainUtils'
 pod 'TDBadgedCell'
 pod 'TUSafariActivity'
+pod 'CrashlyticsFramework'
 
 #target "Buzzurl touch" do
 #end

@@ -1,27 +1,26 @@
 PODS:
-  - NJKWebViewProgress (0.2):
+  - CrashlyticsFramework (2.1.7)
+  - NJKWebViewProgress (0.2.2):
     - NJKWebViewProgress/Core
     - NJKWebViewProgress/ProgressView
-  - NJKWebViewProgress/Core (0.2)
-  - NJKWebViewProgress/ProgressView (0.2)
+  - NJKWebViewProgress/Core (0.2.2)
+  - NJKWebViewProgress/ProgressView (0.2.2)
   - SFHFKeychainUtils (0.0.1)
   - TDBadgedCell (2.4.1)
   - TUSafariActivity (1.0.0)
 
 DEPENDENCIES:
-  - NJKWebViewProgress (from `git@github.com:ninjinkun/NJKWebViewProgress.git`)
+  - CrashlyticsFramework
+  - NJKWebViewProgress
   - SFHFKeychainUtils
   - TDBadgedCell
   - TUSafariActivity
 
-EXTERNAL SOURCES:
-  NJKWebViewProgress:
-    :git: git@github.com:ninjinkun/NJKWebViewProgress.git
-
 SPEC CHECKSUMS:
-  NJKWebViewProgress: fd46c9489d799d97f3b09210886bf83884f6c725
-  SFHFKeychainUtils: e828dbd9eaa509486acf95d8de2ebd414c4b7451
-  TDBadgedCell: 16b3256427b4bfc61e7822f0c3eebc6b71cad60d
+  CrashlyticsFramework: 569d2b1c71922aa480bfdc55df4c86aedf7b215c
+  NJKWebViewProgress: 4f905b9ab7eb91525dc899cacebd2941a6d4553b
+  SFHFKeychainUtils: d1ae332c4ef51a67d7e6e9292a060b42329316fd
+  TDBadgedCell: ad8af50eab8577a4345ac7fd25bef7eaa65658d8
   TUSafariActivity: bd9da588f5f9136ba445d89f8f86b6dccf4d46ba
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.32.1
