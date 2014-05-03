@@ -46,21 +46,19 @@
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if(self){
-        self.topics = [[NSArray alloc]initWithObjects:
-                       @"AAMFeedbackTopicsQuestion",
+        self.topics = @[@"AAMFeedbackTopicsQuestion",
                        @"AAMFeedbackTopicsRequest",
                        @"AAMFeedbackTopicsBugReport",
                        @"AAMFeedbackTopicsMedia",
                        @"AAMFeedbackTopicsBusiness",
-                       @"AAMFeedbackTopicsOther", nil];
+                       @"AAMFeedbackTopicsOther"];
         
-        self.topicsToSend = [[NSArray alloc]initWithObjects:
-                             @"Question",
+        self.topicsToSend = @[@"Question",
                              @"Request",
                              @"Bug Report",
                              @"Media",
                              @"Business",
-                             @"Other", nil];
+                             @"Other"];
     }
     return self;
 }
@@ -358,23 +356,22 @@
 
 - (NSString*)_selectedTopic
 {
-    return [topics objectAtIndex:_selectedTopicsIndex];
+    return topics[_selectedTopicsIndex];
 }
 
 - (NSString*)_selectedTopicToSend
 {
-    return [topicsToSend objectAtIndex:_selectedTopicsIndex];
+    return topicsToSend[_selectedTopicsIndex];
 }
 
 - (NSString*)_appName
 {
-    return [[[NSBundle mainBundle] infoDictionary] objectForKey:
-            @"CFBundleDisplayName"];
+    return [[NSBundle mainBundle] infoDictionary][@"CFBundleDisplayName"];
 }
 
 - (NSString*)_appVersion
 {
-    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    return [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
 }
 
 // Codes are from 
@@ -392,7 +389,7 @@
     machine = malloc(len);
     sysctl(mib, 2, machine, &len, NULL, 0);
     
-    NSString *platform = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
+    NSString *platform = @(machine);
     free(machine);
     return platform;
 }

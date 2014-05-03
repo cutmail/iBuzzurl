@@ -149,7 +149,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    Article* article = [articleList objectAtIndex:[indexPath row]];
+    Article* article = articleList[[indexPath row]];
     
     cell.textLabel.text = article.title;
     cell.textLabel.textColor = [UIColor darkGrayColor];
@@ -165,7 +165,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    Article* article = [articleList objectAtIndex:[indexPath row]];
+    Article* article = articleList[[indexPath row]];
     
     WebViewController *controller = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
     controller.hidesBottomBarWhenPushed = YES;

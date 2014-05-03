@@ -62,7 +62,7 @@
     UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:web action:@selector(stopLoading)];
     UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(action:)];
     
-    [toolbar setItems:[NSArray arrayWithObjects:flexibleSpace, backButton, flexibleSpace, forwardButton, flexibleSpace, reloadButton, flexibleSpace, stopButton, flexibleSpace, actionButton, flexibleSpace, nil] animated:NO];
+    [toolbar setItems:@[flexibleSpace, backButton, flexibleSpace, forwardButton, flexibleSpace, reloadButton, flexibleSpace, stopButton, flexibleSpace, actionButton, flexibleSpace] animated:NO];
     
 }
 
@@ -144,7 +144,7 @@
 }
 
 - (void)action:(id)sender {
-    NSArray *actItems = [NSArray arrayWithObjects:[NSURL URLWithString:self.pageURL], nil];
+    NSArray *actItems = @[[NSURL URLWithString:self.pageURL]];
     TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:actItems applicationActivities:@[safariActivity]];
     [self presentViewController:activityViewController animated:YES completion:nil];

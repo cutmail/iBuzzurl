@@ -41,7 +41,7 @@
     if ([[jsonString JSONValue] isKindOfClass:[NSDictionary class]]) { 
         NSDictionary *dicData = [jsonString JSONValue];
         
-        if ([[dicData objectForKey:@"status"] isEqualToString:@"fail"]) {
+        if ([dicData[@"status"] isEqualToString:@"fail"]) {
         }
     } else {
         NSArray *articles = [jsonString JSONValue];
@@ -66,7 +66,7 @@
     if ([[jsonString JSONValue] isKindOfClass:[NSDictionary class]]) { 
         NSDictionary *dicData = [jsonString JSONValue];
         
-        if ([[dicData objectForKey:@"status"] isEqualToString:@"fail"]) {
+        if ([dicData[@"status"] isEqualToString:@"fail"]) {
         }
     } else {
         NSArray *articles = [jsonString JSONValue];

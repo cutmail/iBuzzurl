@@ -26,10 +26,10 @@
         return nil;
     }
     
-    _title = [dict objectForKey:@"title"];
-    _url = [dict objectForKey:@"url"];
-    _comment = ([dict objectForKey:@"comment"] == [NSNull null]) ? @"" : [dict objectForKey:@"comment"];
-    _userNum = ([dict objectForKey:@"user_num"] == [NSNull null]) ? @"" : [dict objectForKey:@"user_num"];
+    _title = dict[@"title"];
+    _url = dict[@"url"];
+    _comment = (dict[@"comment"] == [NSNull null]) ? @"" : dict[@"comment"];
+    _userNum = (dict[@"user_num"] == [NSNull null]) ? @"" : dict[@"user_num"];
     
     return self;
 }

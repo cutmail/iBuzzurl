@@ -145,7 +145,7 @@
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 
                 cell.textLabel.text = @"バージョン";
-                cell.detailTextLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+                cell.detailTextLabel.text = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
             }
         }
         return cell;
@@ -181,7 +181,7 @@
 {
     if (indexPath.section == 1 && indexPath.row == 0) {
         AAMFeedbackViewController *vc = [[AAMFeedbackViewController alloc]init];
-        vc.toRecipients = [NSArray arrayWithObject:@"cutmailapp@gmail.com"];
+        vc.toRecipients = @[@"cutmailapp@gmail.com"];
         vc.ccRecipients = nil;
         vc.bccRecipients = nil;
         UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:vc];

@@ -83,7 +83,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = NSLocalizedString([[self _topics]objectAtIndex:indexPath.row],nil);
+    cell.textLabel.text = NSLocalizedString([self _topics][indexPath.row],nil);
     
     return cell;
 }
@@ -119,7 +119,7 @@
     int n = [cells count];
     for(int i=0; i<n; i++)
     {
-        UITableViewCell *cell = [cells objectAtIndex:i];
+        UITableViewCell *cell = cells[i];
         cell.textLabel.textColor = [UIColor blackColor];
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
