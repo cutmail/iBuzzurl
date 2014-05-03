@@ -13,6 +13,6 @@
     UITextField *usernameField;
 }
 
-@property (nonatomic, retain) UITextField *usernameField;
+@property (nonatomic, strong) UITextField *usernameField;
 
 @end

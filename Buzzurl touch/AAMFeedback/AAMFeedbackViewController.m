@@ -46,21 +46,21 @@
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if(self){
-        self.topics = [[[NSArray alloc]initWithObjects:
+        self.topics = [[NSArray alloc]initWithObjects:
                        @"AAMFeedbackTopicsQuestion",
                        @"AAMFeedbackTopicsRequest",
                        @"AAMFeedbackTopicsBugReport",
                        @"AAMFeedbackTopicsMedia",
                        @"AAMFeedbackTopicsBusiness",
-                       @"AAMFeedbackTopicsOther", nil]autorelease];
+                       @"AAMFeedbackTopicsOther", nil];
         
-        self.topicsToSend = [[[NSArray alloc]initWithObjects:
+        self.topicsToSend = [[NSArray alloc]initWithObjects:
                              @"Question",
                              @"Request",
                              @"Bug Report",
                              @"Media",
                              @"Business",
-                             @"Other", nil]autorelease];
+                             @"Other", nil];
     }
     return self;
 }
@@ -75,15 +75,6 @@
     return self;
 }
 
-- (void)dealloc {
-    self.descriptionText = nil;
-    self.topics = nil;
-    self.topicsToSend = nil;
-    self.toRecipients = nil;
-    self.ccRecipients = nil;
-    self.bccRecipients = nil;
-    [super dealloc];
-}
 
 
 #pragma mark - View lifecycle
@@ -92,9 +83,9 @@
 {
     [super loadView];
     self.title = NSLocalizedString(@"AAMFeedbackTitle", nil);
-    self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelDidPress:)]autorelease];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelDidPress:)];
     
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"AAMFeedbackButtonMail", nil) style:UIBarButtonItemStyleDone target:self action:@selector(nextDidPress:)]autorelease];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"AAMFeedbackButtonMail", nil) style:UIBarButtonItemStyleDone target:self action:@selector(nextDidPress:)];
 }
 
 - (void)viewDidLoad
@@ -187,18 +178,18 @@
     if (cell == nil) {
         if(indexPath.section==1){
             //General Infos
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
         }else{
             if(indexPath.row==0){
                 //Topics
-                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1      reuseIdentifier:CellIdentifier] autorelease];
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1      reuseIdentifier:CellIdentifier];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }else{
                 //Topics Description
-                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault      reuseIdentifier:CellIdentifier] autorelease];
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault      reuseIdentifier:CellIdentifier];
                 
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                _descriptionTextView = [[[UITextView alloc]initWithFrame:CGRectMake(10, 0, 300, 88)]autorelease];
+                _descriptionTextView = [[UITextView alloc]initWithFrame:CGRectMake(10, 0, 300, 88)];
                 _descriptionTextView.backgroundColor = [UIColor clearColor];
                 _descriptionTextView.font = [UIFont systemFontOfSize:16];
                 _descriptionTextView.delegate = self;
@@ -206,7 +197,7 @@
                 _descriptionTextView.text = self.descriptionText;
                 [cell addSubview:_descriptionTextView];
                 
-                _descriptionPlaceHolder = [[[UITextField alloc]initWithFrame:CGRectMake(16, 8, 300, 20)]autorelease];
+                _descriptionPlaceHolder = [[UITextField alloc]initWithFrame:CGRectMake(16, 8, 300, 20)];
                 _descriptionPlaceHolder.font = [UIFont systemFontOfSize:16];
                 _descriptionPlaceHolder.placeholder = NSLocalizedString(@"AAMFeedbackDescriptionPlaceholder", nil);
                 _descriptionPlaceHolder.userInteractionEnabled = NO;
@@ -273,7 +264,7 @@
     if(indexPath.section==0 && indexPath.row==0){
         [_descriptionTextView resignFirstResponder];
         
-        AAMFeedbackTopicsViewController *vc = [[[AAMFeedbackTopicsViewController alloc]initWithStyle:UITableViewStyleGrouped]autorelease];
+        AAMFeedbackTopicsViewController *vc = [[AAMFeedbackTopicsViewController alloc]initWithStyle:UITableViewStyleGrouped];
         vc.delegate = self;
         vc.selectedIndex = _selectedTopicsIndex;
         [self.navigationController pushViewController:vc animated:YES];
@@ -299,7 +290,6 @@
     [picker setSubject:[self _feedbackSubject]];
     [picker setMessageBody:[self _feedbackBody] isHTML:NO];
     [self presentModalViewController:picker animated:YES];
-    [picker release];
 }
 
 
@@ -329,7 +319,6 @@
                                               cancelButtonTitle:nil 
                                               otherButtonTitles:@"OK", nil];
         [alert show];
-        [alert release];
     }
     [controller dismissModalViewControllerAnimated:YES]; 
 }

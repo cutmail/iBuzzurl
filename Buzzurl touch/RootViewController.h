@@ -19,8 +19,8 @@
     dispatch_queue_t timeline_queue;
 }
 
-@property (nonatomic, retain) IBOutlet UITableView *_tableView;
-@property (nonatomic, retain) NSMutableArray *articleList;
+@property (nonatomic, strong) IBOutlet UITableView *_tableView;
+@property (nonatomic, strong) NSMutableArray *articleList;
 
 - (BOOL)isLogin;
 - (void)showSettings;

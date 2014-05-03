@@ -23,11 +23,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [usernameField release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -42,7 +37,6 @@
     view.dataSource = self;
     view.delegate   = self;
     self.view = view;
-    [view release];
 }
 
 - (void)viewDidLoad
@@ -60,8 +54,8 @@
     [super viewWillAppear:animated];
     
     self.title = NSLocalizedString(@"Settings", @"Settings");
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] 
-                                               initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveUserInfo)] autorelease];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] 
+                                               initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveUserInfo)];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -114,7 +108,7 @@
         static NSString *CellIdentifier = @"Cell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];	
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];	
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             if ([indexPath row] == 0) {
@@ -137,7 +131,7 @@
             static NSString *InquiryCellIdentifier = @"InquiryCell";
             cell = [tableView dequeueReusableCellWithIdentifier:InquiryCellIdentifier];
             if (cell == nil) {
-                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:InquiryCellIdentifier] autorelease];
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:InquiryCellIdentifier];
                 
                 cell.textLabel.text = @"お問い合わせ／ご要望";
                 
@@ -147,7 +141,7 @@
             static NSString *AboutCellIdentifier = @"AboutCell";
             cell = [tableView dequeueReusableCellWithIdentifier:AboutCellIdentifier];
             if (cell == nil) {
-                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:AboutCellIdentifier] autorelease];
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:AboutCellIdentifier];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 
                 cell.textLabel.text = @"バージョン";
@@ -186,11 +180,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1 && indexPath.row == 0) {
-        AAMFeedbackViewController *vc = [[[AAMFeedbackViewController alloc]init]autorelease];
+        AAMFeedbackViewController *vc = [[AAMFeedbackViewController alloc]init];
         vc.toRecipients = [NSArray arrayWithObject:@"cutmailapp@gmail.com"];
         vc.ccRecipients = nil;
         vc.bccRecipients = nil;
-        UINavigationController *nvc = [[[UINavigationController alloc]initWithRootViewController:vc]autorelease];
+        UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:vc];
         [self.navigationController presentViewController:nvc animated:YES completion:nil];
     }
 }

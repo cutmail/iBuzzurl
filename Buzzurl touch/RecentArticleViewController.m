@@ -63,7 +63,7 @@
     [super viewDidLoad];
     
     self.title = @"iBuzzurl";
-    UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
+    UIBarButtonItem *prefButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)];
     self.navigationItem.leftBarButtonItem = prefButton;
     
     if (_refreshHeaderView == nil) {
@@ -71,7 +71,6 @@
         view.delegate = self;
         [self._tableView addSubview:view];
         _refreshHeaderView = view;
-        [view release];
     }
     
     self.articleList = [[NSMutableArray alloc] init];
@@ -115,7 +114,6 @@
     UINavigationController* navCon = [[UINavigationController alloc]
                                       initWithRootViewController:settingView];
     [self.navigationController presentViewController:navCon animated:YES completion:nil];
-	[navCon release];
 }
 
 
@@ -142,7 +140,7 @@
     
     TDBadgedCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.badge.radius = 9;
         cell.badge.fontSize = 18;
     }
@@ -169,7 +167,6 @@
     controller.pageURL = article.url;
     
     [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
 }
 
 #pragma mark -
@@ -238,14 +235,11 @@
     
     _refreshHeaderView = nil;
     self.articleList = nil;
-    [articleList release];
 }
 
 - (void)dealloc
 {
     _refreshHeaderView = nil;
-    [articleList release];
-    [super dealloc];
 }
 
 @end

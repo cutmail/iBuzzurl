@@ -49,7 +49,6 @@
             if (articleList == nil) {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error") message:NSLocalizedString(@"Check your username", @"Check your username") delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil]; 
                 [alert show];  
-                [alert release];
             }
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             [self doneLoadingTableViewData];
@@ -66,7 +65,7 @@
     [super viewDidLoad];
     
     self.title = @"iBuzzurl";
-    UIBarButtonItem *prefButton = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)] autorelease];
+    UIBarButtonItem *prefButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)];
     self.navigationItem.leftBarButtonItem = prefButton;
     
     if (_refreshHeaderView == nil) {
@@ -74,7 +73,6 @@
         view.delegate = self;
         [self._tableView addSubview:view];
         _refreshHeaderView = view;
-        [view release];
     }
     
     self.articleList = [[NSMutableArray alloc] init];
@@ -122,7 +120,6 @@
     UINavigationController* navCon = [[UINavigationController alloc]
                                       initWithRootViewController:settingView];
     [self.navigationController presentViewController:navCon animated:YES completion:nil];
-	[navCon release];
 }
 
 
@@ -149,7 +146,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     Article* article = [articleList objectAtIndex:[indexPath row]];
@@ -175,7 +172,6 @@
     controller.pageURL = article.url;
     
     [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
 }
 
 #pragma mark -
@@ -220,7 +216,6 @@
         [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:1.0];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error") message:NSLocalizedString(@"Please Login", @"Please Login") delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil]; 
         [alert show];  
-        [alert release]; 
     }
     
 }
@@ -256,14 +251,11 @@
     
     _refreshHeaderView = nil;
     self.articleList = nil;
-    [articleList release];
 }
 
 - (void)dealloc
 {
     _refreshHeaderView = nil;
-    [articleList release];
-    [super dealloc];
 }
 
 @end

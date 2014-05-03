@@ -15,10 +15,10 @@
     NSString* _userNum;
 }
 
-@property (nonatomic, retain) NSString* title;
-@property (nonatomic, retain) NSString* url;
-@property (nonatomic, retain) NSString* comment;
-@property (nonatomic, retain) NSString* userNum;
+@property (nonatomic, strong) NSString* title;
+@property (nonatomic, strong) NSString* url;
+@property (nonatomic, strong) NSString* comment;
+@property (nonatomic, strong) NSString* userNum;
 
 - (id) initWithDictionary:(NSDictionary *)dict;
 

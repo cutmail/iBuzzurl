@@ -12,7 +12,7 @@
     NSInteger _selectedIndex;
 }
 
-@property (assign, nonatomic) id delegate;
+@property (weak, nonatomic) id delegate;
 @property (assign, nonatomic) NSInteger selectedIndex;
 
 @end

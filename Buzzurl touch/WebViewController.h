@@ -17,6 +17,6 @@
     UIActionSheet *sheet;
 }
 
-@property (nonatomic, retain) NSString *pageURL;
+@property (nonatomic, strong) NSString *pageURL;
 
 @end

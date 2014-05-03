@@ -69,12 +69,5 @@
      */
 }
 
-- (void)dealloc
-{
-    [_window release];
-    [_navigationController release];
-    [_tabBarController release];
-    [super dealloc];
-}
 
 @end

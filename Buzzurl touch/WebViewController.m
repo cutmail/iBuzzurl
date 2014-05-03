@@ -28,10 +28,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,18 +45,15 @@
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 416.0f)];
     contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.view = contentView;
-    [contentView release];
     
     web = [[UIWebView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 372.0f)];
     web.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
     web.scalesPageToFit = YES;
     [contentView addSubview:web];
-    [web release];
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 372.0f, 320.0f, 44.0f)];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
     [contentView addSubview:toolbar];
-    [toolbar release];
     
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iconBrowsePrev.png"] style:UIBarButtonItemStylePlain target:web action:@selector(goBack)];
@@ -71,12 +64,6 @@
     
     [toolbar setItems:[NSArray arrayWithObjects:flexibleSpace, backButton, flexibleSpace, forwardButton, flexibleSpace, reloadButton, flexibleSpace, stopButton, flexibleSpace, actionButton, flexibleSpace, nil] animated:NO];
     
-    [flexibleSpace release];
-    [backButton release];
-    [forwardButton release];
-    [reloadButton release];
-    [actionButton release];
-    [stopButton release];
 }
 
 - (void)viewDidLoad
@@ -94,7 +81,6 @@
     titleView.font = [UIFont systemFontOfSize:14.0f];
     titleView.numberOfLines = 1;
     self.navigationItem.titleView = titleView;
-    [titleView release];
     
     NJKWebViewProgress *progressProxy = [[NJKWebViewProgress alloc] init];
     web.delegate = progressProxy;

@@ -27,25 +27,12 @@
     }
     
     _title = [dict objectForKey:@"title"];
-    [_title retain];
     _url = [dict objectForKey:@"url"];
-    [_url retain];
     _comment = ([dict objectForKey:@"comment"] == [NSNull null]) ? @"" : [dict objectForKey:@"comment"];
-    [_comment retain];
     _userNum = ([dict objectForKey:@"user_num"] == [NSNull null]) ? @"" : [dict objectForKey:@"user_num"];
-    [_userNum retain];
     
     return self;
 }
 
-- (void) dealloc 
-{
-    [_title release];
-    [_url release];
-    [_comment release];
-    [_userNum release];
-    
-    [super dealloc];
-}
 
 @end

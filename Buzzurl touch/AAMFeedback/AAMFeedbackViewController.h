@@ -18,12 +18,12 @@
     BOOL _isFeedbackSent;
 }
 
-@property (retain, nonatomic) NSString *descriptionText;
-@property (retain, nonatomic) NSArray *topics;
-@property (retain, nonatomic) NSArray *topicsToSend;
-@property (retain, nonatomic) NSArray *toRecipients;
-@property (retain, nonatomic) NSArray *ccRecipients;
-@property (retain, nonatomic) NSArray *bccRecipients;
+@property (strong, nonatomic) NSString *descriptionText;
+@property (strong, nonatomic) NSArray *topics;
+@property (strong, nonatomic) NSArray *topicsToSend;
+@property (strong, nonatomic) NSArray *toRecipients;
+@property (strong, nonatomic) NSArray *ccRecipients;
+@property (strong, nonatomic) NSArray *bccRecipients;
 
 + (BOOL)isAvailable;
 - (id)initWithTopics:(NSArray*)theTopics;
