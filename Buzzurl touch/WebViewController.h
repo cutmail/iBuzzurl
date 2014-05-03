@@ -11,9 +11,6 @@
 #import "NJKWebViewProgress.h"
 
 @interface WebViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate, NJKWebViewProgressDelegate> {
-    UIWebView *web;
-    UILabel   *titleView;
-    
     UIActionSheet *sheet;
 }
 

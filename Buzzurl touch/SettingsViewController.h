@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SettingsViewController : UITableViewController <UITextFieldDelegate> {
-    UITextField *usernameField;
-}
+@interface SettingsViewController : UITableViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) UITextField *usernameField;
 

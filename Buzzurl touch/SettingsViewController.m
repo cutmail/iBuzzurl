@@ -12,7 +12,6 @@
 #import "AAMFeedbackViewController.h"
 
 @implementation SettingsViewController
-@synthesize usernameField;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -112,16 +111,16 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             if ([indexPath row] == 0) {
-                usernameField = [[UITextField alloc] initWithFrame:CGRectInset(cell.contentView.bounds, 20, 0)];
-                usernameField.placeholder = NSLocalizedString(@"Username", @"Username");
-                usernameField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-                usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
-                usernameField.keyboardType = UIKeyboardTypeAlphabet;    
-                usernameField.returnKeyType = UIReturnKeyDone;
-                usernameField.delegate = self;
-                usernameField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
+                self.usernameField = [[UITextField alloc] initWithFrame:CGRectInset(cell.contentView.bounds, 20, 0)];
+                self.usernameField.placeholder = NSLocalizedString(@"Username", @"Username");
+                self.usernameField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+                self.usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                self.usernameField.keyboardType = UIKeyboardTypeAlphabet;
+                self.usernameField.returnKeyType = UIReturnKeyDone;
+                self.usernameField.delegate = self;
+                self.usernameField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
                 
-                [cell addSubview:usernameField];
+                [cell addSubview:_usernameField];
             }
         }
         return cell;
@@ -159,7 +158,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // ユーザ名はNSUserDefaultsを使って保存
-    [defaults setObject:usernameField.text forKey:@"USERNAME"];
+    [defaults setObject:_usernameField.text forKey:@"USERNAME"];
     [self.navigationItem.rightBarButtonItem setEnabled:NO];
     
     [self dismissViewControllerAnimated:YES completion:nil];

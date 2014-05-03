@@ -10,16 +10,11 @@
 
 @implementation Article
 
-@synthesize title = _title;
-@synthesize url = _url;
-@synthesize comment = _comment;
-@synthesize userNum = _userNum;
-
 //-------------------------------------------------------------------------------------//
 #pragma mark -- Initialize --
 //-------------------------------------------------------------------------------------//
 
-- (id) initWithDictionary:(NSDictionary *)dict
+- (id)initWithDictionary:(NSDictionary *)dict
 {
     self = [super init];
     if (self == nil) {

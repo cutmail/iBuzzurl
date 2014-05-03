@@ -56,7 +56,6 @@
 		18C9304B13757F5A006F5DD3 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304C13757F5A006F5DD3 /* RootViewController.xib */; };
 		18C9304E13757F63006F5DD3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C9304F13757F63006F5DD3 /* MainWindow.xib */; };
 		18DB9E08158CCD7B004BD300 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB9E07158CCD7B004BD300 /* MessageUI.framework */; };
-		18E8ECD8137526E000F73ADA /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8ECD9137526E000F73ADA /* EGORefreshTableHeaderView.m */; };
 		8EBF75B949F0455EB13F2267 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524C0EF58B5461D93707D4C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -140,8 +139,6 @@
 		18C9304C13757F5A006F5DD3 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		18C9304F13757F63006F5DD3 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		18DB9E07158CCD7B004BD300 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		18E8ECD9137526E000F73ADA /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
-		18E8ECDA137526E600F73ADA /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		29A65A7FEFE540DEA8ED603E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8524C0EF58B5461D93707D4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -232,7 +229,6 @@
 		186781D213743AF0001D60A2 /* Buzzurl touch */ = {
 			isa = PBXGroup;
 			children = (
-				1867821313743BDA001D60A2 /* EGORefreshTableHeaderView */,
 				186781FE13743BC2001D60A2 /* json-framework */,
 				187AE793141DEF560065D960 /* models */,
 				186781DB13743AF0001D60A2 /* Buzzurl_touchAppDelegate.h */,
@@ -312,16 +308,6 @@
 				1867820913743BC2001D60A2 /* SBJsonWriter.m */,
 			);
 			path = "json-framework";
-			sourceTree = "<group>";
-		};
-		1867821313743BDA001D60A2 /* EGORefreshTableHeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				18E8ECDA137526E600F73ADA /* EGORefreshTableHeaderView.h */,
-				18E8ECD9137526E000F73ADA /* EGORefreshTableHeaderView.m */,
-			);
-			name = EGORefreshTableHeaderView;
-			path = View;
 			sourceTree = "<group>";
 		};
 		187AE793141DEF560065D960 /* models */ = {
@@ -520,7 +506,6 @@
 				1867820C13743BC2001D60A2 /* SBJsonBase.m in Sources */,
 				1867820D13743BC2001D60A2 /* SBJsonParser.m in Sources */,
 				1867820E13743BC2001D60A2 /* SBJsonWriter.m in Sources */,
-				18E8ECD8137526E000F73ADA /* EGORefreshTableHeaderView.m in Sources */,
 				1867822513744C44001D60A2 /* WebViewController.m in Sources */,
 				18AE580D141D1B0100C71E23 /* Buzzurl.m in Sources */,
 				187AE797141DEFFA0065D960 /* Article.m in Sources */,

@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Buzzurl : NSObject {
-    
-}
+@interface Buzzurl : NSObject
 
 + (NSData *)getData:(NSString *)url;
 + (NSMutableArray *)getRecentArticle;

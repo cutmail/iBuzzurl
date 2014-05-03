@@ -15,41 +15,28 @@
 #import "TDBadgedCell.h"
 #import "UIColor+NSString.h"
 
+@interface RecentArticleViewController ()
+@property (nonatomic) UIRefreshControl *refreshControl;
+@end
+
 @implementation RecentArticleViewController
-@synthesize _tableView;
-@synthesize articleList;
 
 #pragma mark -
 #pragma mark Buzzurl access
-
-- (NSData *)getData:(NSString *)url; {
-    NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
-                                             cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
-    NSURLResponse *response;
-    NSError       *error;
-    NSData *result = [NSURLConnection sendSynchronousRequest:request
-                                           returningResponse:&response error:&error];
-    
-    if (result == nil) {
-        NSLog(@"NSURLConnection error %@", error);
-    }
-    
-    return result;
-}
 
 - (void)loadNewData {
     
     main_queue = dispatch_get_main_queue();
     timeline_queue = dispatch_queue_create("me.cutmail.buzzurl.timeline", NULL);
-        
+
+    __weak typeof(self) weakSelf = self;
     dispatch_async(timeline_queue, ^{
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         self.articleList = [Buzzurl getRecentArticle];
         dispatch_async(main_queue, ^{
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            [self doneLoadingTableViewData];
-            [self._tableView reloadData];
+            [self.tableView reloadData];
+            [weakSelf.refreshControl endRefreshing];
         });
     });
     
@@ -61,43 +48,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.title = @"iBuzzurl";
+
+    self.title = @"新着ブックマーク";
     UIBarButtonItem *prefButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)];
     self.navigationItem.leftBarButtonItem = prefButton;
+
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self action:@selector(loadNewData) forControlEvents:UIControlEventValueChanged];
     
-    if (_refreshHeaderView == nil) {
-        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self._tableView.bounds.size.height, 320.0f, self._tableView.bounds.size.height)];
-        view.delegate = self;
-        [self._tableView addSubview:view];
-        _refreshHeaderView = view;
-    }
+    self.tableView.alwaysBounceVertical = YES;
+    [self.tableView addSubview:_refreshControl];
     
     self.articleList = [[NSMutableArray alloc] init];
     
     [self loadNewData];    
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [_refreshHeaderView refreshLastUpdatedDate];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -131,7 +95,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return articleList ? [articleList count] : 0;
+    return _articleList ? [_articleList count] : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -145,7 +109,7 @@
         cell.badge.fontSize = 18;
     }
     
-    Article* article = articleList[[indexPath row]];
+    Article* article = _articleList[[indexPath row]];
     
     cell.textLabel.text = article.title;
     cell.textLabel.textColor = [UIColor darkGrayColor];
@@ -160,7 +124,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    Article* article = articleList[[indexPath row]];
+    Article* article = _articleList[[indexPath row]];
     
     WebViewController *controller = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
     controller.hidesBottomBarWhenPushed = YES;
@@ -169,55 +133,7 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-#pragma mark -
-#pragma mark Data Source Loading / Reloading Methods
-
-- (void)reloadTableViewDataSource {
-    _reloading = YES;
-    [self loadNewData];
-}
-
-- (void)doneLoadingTableViewData {
-    _reloading = NO;
-    [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self._tableView];
-}
-
-#pragma mark -
-#pragma mark UIScrollViewDelegate Methods
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    [_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
-    
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    
-    [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
-    
-}
-
-#pragma mark -
-#pragma mark EGORefreshTableHeaderDelegate Methods
-
-- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView *)view {
-    
-    [self reloadTableViewDataSource];
-}
-
-- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView *)view {
-    
-    return _reloading;
-    
-}
-
-- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView *)view {
-    
-    return [NSDate date];
-    
-}
-
--(UIViewController*)currentViewControllerForAd { 
+-(UIViewController*)currentViewControllerForAd {
     return self;
 }
 
@@ -227,19 +143,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    
-    _refreshHeaderView = nil;
-    self.articleList = nil;
-}
-
-- (void)dealloc
-{
-    _refreshHeaderView = nil;
 }
 
 @end

@@ -8,18 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Article : NSObject {
-    NSString* _title;
-    NSString* _url;
-    NSString* _comment;
-    NSString* _userNum;
-}
+@interface Article : NSObject
 
-@property (nonatomic, strong) NSString* title;
-@property (nonatomic, strong) NSString* url;
-@property (nonatomic, strong) NSString* comment;
-@property (nonatomic, strong) NSString* userNum;
+@property (nonatomic) NSString *title;
+@property (nonatomic) NSString *url;
+@property (nonatomic) NSString *comment;
+@property (nonatomic) NSString *userNum;
 
-- (id) initWithDictionary:(NSDictionary *)dict;
+- (id)initWithDictionary:(NSDictionary *)dict;
 
 @end

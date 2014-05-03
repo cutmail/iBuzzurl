@@ -6,25 +6,15 @@
 //  Copyright 2011 genesix, Inc. All rights reserved.
 //
 
-#import "EGORefreshTableHeaderView.h"
-
-@interface RootViewController : UIViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
-    UITableView                 *_tableView;
-    EGORefreshTableHeaderView   *_refreshHeaderView;
-    BOOL                       _reloading;
-    
-    NSMutableArray *articleList;;
-    
+@interface RootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     dispatch_queue_t main_queue;
     dispatch_queue_t timeline_queue;
 }
 
-@property (nonatomic, strong) IBOutlet UITableView *_tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *articleList;
 
 - (BOOL)isLogin;
 - (void)showSettings;
-- (void)reloadTableViewDataSource;
-- (void)doneLoadingTableViewData;
 
 @end
