@@ -5,7 +5,3 @@ pod 'SFHFKeychainUtils'
 pod 'TDBadgedCell'
 pod 'TUSafariActivity'
 pod 'CrashlyticsFramework'
-
-#target "Buzzurl touch" do
-#end
-
