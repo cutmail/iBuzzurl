@@ -24,8 +24,8 @@
 #pragma mark -
 #pragma mark Buzzurl access
 
-- (void)loadNewData {
-    
+- (void)loadNewData
+{
     main_queue = dispatch_get_main_queue();
     timeline_queue = dispatch_queue_create("me.cutmail.buzzurl.timeline", NULL);
 
@@ -35,7 +35,7 @@
         self.articleList = [Buzzurl getRecentArticle];
         dispatch_async(main_queue, ^{
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
             [weakSelf.refreshControl endRefreshing];
         });
     });
@@ -64,16 +64,14 @@
     [self loadNewData];    
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (BOOL)isLogin {
+- (BOOL)isLogin
+{
     NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
     return (![username isEqualToString:@""] && username != nil);
 }
 
-- (void)showSettings {
+- (void)showSettings
+{
     SettingsViewController *settingView = [[SettingsViewController alloc] init];
     UINavigationController* navCon = [[UINavigationController alloc]
                                       initWithRootViewController:settingView];
@@ -84,7 +82,8 @@
 #pragma mark -
 #pragma mark TableView Datasource Methods
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return 60.0;
 }
 
@@ -121,7 +120,8 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     Article* article = _articleList[[indexPath row]];
@@ -131,10 +131,6 @@
     controller.pageURL = article.url;
     
     [self.navigationController pushViewController:controller animated:YES];
-}
-
--(UIViewController*)currentViewControllerForAd {
-    return self;
 }
 
 #pragma mark -

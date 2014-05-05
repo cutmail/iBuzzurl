@@ -23,8 +23,8 @@
 #pragma mark -
 #pragma mark Buzzurl access
 
-- (void)loadNewData {
-    
+- (void)loadNewData
+{
     main_queue = dispatch_get_main_queue();
     timeline_queue = dispatch_queue_create("me.cutmail.buzzurl.timeline", NULL);
    
@@ -34,11 +34,11 @@
         self.articleList = [Buzzurl getUserRecentArticle];
         dispatch_async(main_queue, ^{
             if (_articleList == nil) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error") message:NSLocalizedString(@"Check your username", @"Check your username") delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil]; 
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error") message:NSLocalizedString(@"Check your username", @"Check your username") delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
                 [alert show];  
             }
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
             [weakSelf.refreshControl endRefreshing];
         });
     });
@@ -68,41 +68,26 @@
 {
     [super viewWillAppear:animated];    
     
-    if ([self isLogin] == YES) {
+    if ([self isLogin]) {
         [self loadNewData];
-    } else {
+    }
+    else {
         [self showSettings];
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (BOOL)isLogin
 {
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (BOOL)isLogin {
     NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
     return (![username isEqualToString:@""] && username != nil);
 }
 
-- (void)showSettings {
+- (void)showSettings
+{
     SettingsViewController *settingView = [[SettingsViewController alloc] init];
     UINavigationController* navCon = [[UINavigationController alloc]
                                       initWithRootViewController:settingView];
+    
     [self.navigationController presentViewController:navCon animated:YES completion:nil];
 }
 
@@ -110,7 +95,8 @@
 #pragma mark -
 #pragma mark TableView Datasource Methods
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return 60.0;
 }
 
@@ -146,7 +132,8 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     Article* article = _articleList[[indexPath row]];
@@ -157,11 +144,6 @@
     
     [self.navigationController pushViewController:controller animated:YES];
 }
-
--(UIViewController*)currentViewControllerForAd {
-    return self;
-}
-
 
 #pragma mark -
 #pragma mark Memory management

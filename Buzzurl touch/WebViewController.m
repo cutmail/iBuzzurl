@@ -104,11 +104,6 @@
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 -(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
 {
     [_progressView setProgress:progress animated:YES];
@@ -116,22 +111,20 @@
 
 #pragma mark -
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     self.title = self.pageURL;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     self.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    if ([error code] != -999) {
-    }
-}
-
-- (void)action:(id)sender {
+- (void)action:(id)sender
+{
     NSArray *actItems = @[[NSURL URLWithString:self.pageURL]];
     TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:actItems applicationActivities:@[safariActivity]];

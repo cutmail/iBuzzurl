@@ -30,7 +30,8 @@
 
 #pragma mark - View lifecycle
 
-- (void)loadView {
+- (void)loadView
+{
     UITableView *view = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]
                                                      style:UITableViewStyleGrouped];
     view.dataSource = self;
@@ -57,26 +58,6 @@
                                                initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveUserInfo)];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -88,15 +69,18 @@
 {
     if (section == 0) {
         return 1;
-    } else {
+    }
+    else {
         return 2;
     }
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
     if (section == 0) {
         return NSLocalizedString(@"Account", @"Account");        
-    } else {
+    }
+    else {
         return nil;
     }
 }
@@ -124,7 +108,8 @@
             }
         }
         return cell;
-    } else {
+    }
+    else {
         UITableViewCell *cell;
         if (indexPath.row == 0) {
             static NSString *InquiryCellIdentifier = @"InquiryCell";
@@ -136,7 +121,8 @@
                 
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }           
-        } else {
+        }
+        else {
             static NSString *AboutCellIdentifier = @"AboutCell";
             cell = [tableView dequeueReusableCellWithIdentifier:AboutCellIdentifier];
             if (cell == nil) {
@@ -154,7 +140,8 @@
 }
 
 
-- (void)saveUserInfo {
+- (void)saveUserInfo
+{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // ユーザ名はNSUserDefaultsを使って保存
@@ -164,12 +151,14 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
     // Saveボタンを有効にする
     [self.navigationItem.rightBarButtonItem setEnabled:YES];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
     [textField resignFirstResponder];
     return YES;
 }
