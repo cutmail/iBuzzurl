@@ -1,16 +1,16 @@
 PODS:
   - AAMFeedback (0.2.0):
     - UIDeviceIdentifier
-  - CrashlyticsFramework (2.1.7)
-  - NJKWebViewProgress (0.2.2):
+  - CrashlyticsFramework (2.2.2)
+  - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core
     - NJKWebViewProgress/ProgressView
-  - NJKWebViewProgress/Core (0.2.2)
-  - NJKWebViewProgress/ProgressView (0.2.2)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - SFHFKeychainUtils (0.0.1)
-  - TDBadgedCell (2.4.1)
+  - TDBadgedCell (2.6)
   - TUSafariActivity (1.0.0)
-  - UIDeviceIdentifier (0.4)
+  - UIDeviceIdentifier (0.4.2)
 
 DEPENDENCIES:
   - AAMFeedback (from `https://github.com/azu/AAMFeedback.git`)
@@ -26,11 +26,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AAMFeedback: 68f815343be58ee6afab6c49903254ddff7d58fd
-  CrashlyticsFramework: 569d2b1c71922aa480bfdc55df4c86aedf7b215c
-  NJKWebViewProgress: 4f905b9ab7eb91525dc899cacebd2941a6d4553b
-  SFHFKeychainUtils: d1ae332c4ef51a67d7e6e9292a060b42329316fd
-  TDBadgedCell: ad8af50eab8577a4345ac7fd25bef7eaa65658d8
-  TUSafariActivity: bd9da588f5f9136ba445d89f8f86b6dccf4d46ba
-  UIDeviceIdentifier: eb3d34699982f02350acf544516a4b8f9a9fcaad
+  CrashlyticsFramework: bce4c0e83b50f22aafde946b41a34a6b8ca7acd0
+  NJKWebViewProgress: 721b57080c840c76f70ff6c2dda4f836ee1b27c1
+  SFHFKeychainUtils: 6fdda05a86d035db406c7662ec1054814b68f0fd
+  TDBadgedCell: e683b5557d12ea4e28a8d6ac20b6e394abc2c1fe
+  TUSafariActivity: afff9b1d2eacf7cbace752c5f2bf56db852714de
+  UIDeviceIdentifier: 1944dd25ee46fbc592740148ab47d543f80f0bba
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1
