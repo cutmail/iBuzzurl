@@ -3,7 +3,7 @@
 //  iBuzzurl
 //
 //  Created by Tatsuya Arai on 11/05/06.
-//  Copyright 2011 genesix, Inc. All rights reserved.
+//  Copyright 2011 cutmail, Inc. All rights reserved.
 //
 
 #import "SettingsViewController.h"

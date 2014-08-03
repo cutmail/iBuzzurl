@@ -3,7 +3,7 @@
 //  BuzzurlTouch Tests
 //
 //  Created by Tatsuya Arai on 5/1/14.
-//  Copyright (c) 2014 genesix, Inc. All rights reserved.
+//  Copyright (c) 2014 cutmail, Inc. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

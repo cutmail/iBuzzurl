@@ -1,9 +1,9 @@
 //
 //  UIColor+NSString.h
-//  libGenesixCommon
+//  libcutmailCommon
 //
 //  Created by Tonny on 10/07/30.
-//  Copyright 2010 genesix Inc. All rights reserved.
+//  Copyright 2010 cutmail Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,11 +1,11 @@
 //
 //  UIColor+NSString.m
-//  libGenesixCommon
+//  libcutmailCommon
 //
 //  originally created by ars [https://github.com/ars/uicolor-utilitie]
 //
 //  Created by Tonny on 10/07/30.
-//  Copyright 2010 genesix Inc. All rights reserved.
+//  Copyright 2010 cutmail Inc. All rights reserved.
 //
 
 #import "UIColor+NSString.h"
