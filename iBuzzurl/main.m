@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-int main(int argc, char *argv[])
+#import "iBuzzurlAppDelegate.h"
+
+int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        int retVal = UIApplicationMain(argc, argv, nil, nil);
-        return retVal;
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([iBuzzurlAppDelegate class]));
     }
 }

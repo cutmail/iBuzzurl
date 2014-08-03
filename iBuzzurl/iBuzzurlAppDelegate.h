@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iBuzzurlAppDelegate : NSObject <UIApplicationDelegate> {
+@interface iBuzzurlAppDelegate : UIResponder <UIApplicationDelegate> {
 
 }
 
-@property (nonatomic, strong) IBOutlet UIWindow *window;
-
-@property (nonatomic, strong) IBOutlet UINavigationController *navigationController;
-@property (nonatomic, strong) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, strong) UIWindow *window;
 
 @end
