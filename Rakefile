@@ -1,5 +1,5 @@
-SCHEME = "BuzzurlTouch"
-WORKSPACE = "Buzzurl\\ touch.xcworkspace"
+SCHEME = "iBuzzurl"
+WORKSPACE = "iBuzzurl.xcworkspace"
 CONFIGURATION = "Debug"
 
 DESTINATIONS = ["name=iPhone Retina (3.5-inch),OS=7.1",

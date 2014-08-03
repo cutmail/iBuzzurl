@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface BuzzurlTouch_Tests : XCTestCase
+@interface iBuzzurl_Tests : XCTestCase
 
 @end
 
-@implementation BuzzurlTouch_Tests
+@implementation iBuzzurl_Tests
 
 - (void)setUp
 {

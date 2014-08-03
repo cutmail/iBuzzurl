@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "186781C713743AF0001D60A2"
-               BuildableName = "BuzzurlTouch.app"
-               BlueprintName = "BuzzurlTouch"
-               ReferencedContainer = "container:Buzzurl touch.xcodeproj">
+               BuildableName = "iBuzzurl.app"
+               BlueprintName = "iBuzzurl"
+               ReferencedContainer = "container:iBuzzurl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18078EFF1912725D008693F5"
-               BuildableName = "Buzzurl touch Tests.xctest"
-               BlueprintName = "Buzzurl touch Tests"
-               ReferencedContainer = "container:Buzzurl touch.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "18078F181912744A008693F5"
-               BuildableName = "BuzzurlTouch Tests.xctest"
-               BlueprintName = "BuzzurlTouch Tests"
-               ReferencedContainer = "container:Buzzurl touch.xcodeproj">
+               BuildableName = "iBuzzurlTests.xctest"
+               BlueprintName = "iBuzzurlTests"
+               ReferencedContainer = "container:iBuzzurl.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "186781C713743AF0001D60A2"
-            BuildableName = "BuzzurlTouch.app"
-            BlueprintName = "BuzzurlTouch"
-            ReferencedContainer = "container:Buzzurl touch.xcodeproj">
+            BuildableName = "iBuzzurl.app"
+            BlueprintName = "iBuzzurl"
+            ReferencedContainer = "container:iBuzzurl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -72,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "186781C713743AF0001D60A2"
-            BuildableName = "BuzzurlTouch.app"
-            BlueprintName = "BuzzurlTouch"
-            ReferencedContainer = "container:Buzzurl touch.xcodeproj">
+            BuildableName = "iBuzzurl.app"
+            BlueprintName = "iBuzzurl"
+            ReferencedContainer = "container:iBuzzurl.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -90,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "186781C713743AF0001D60A2"
-            BuildableName = "BuzzurlTouch.app"
-            BlueprintName = "BuzzurlTouch"
-            ReferencedContainer = "container:Buzzurl touch.xcodeproj">
+            BuildableName = "iBuzzurl.app"
+            BlueprintName = "iBuzzurl"
+            ReferencedContainer = "container:iBuzzurl.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

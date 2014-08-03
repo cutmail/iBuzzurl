@@ -1,6 +1,6 @@
 //
 //  Article.h
-//  Buzzurl touch
+//  iBuzzurl
 //
 //  Created by 荒井 達哉 on 11/09/12.
 //  Copyright (c) 2011年 genesix, Inc. All rights reserved.

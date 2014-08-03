@@ -1,15 +1,15 @@
 //
-//  Buzzurl_touchAppDelegate.m
-//  Buzzurl touch
+//  iBuzzurlAppDelegate.m
+//  iBuzzurl
 //
 //  Created by Tatsuya Arai on 11/05/06.
 //  Copyright 2011 genesix, Inc. All rights reserved.
 //
 
-#import "Buzzurl_touchAppDelegate.h"
+#import "iBuzzurlAppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
 
-@implementation Buzzurl_touchAppDelegate
+@implementation iBuzzurlAppDelegate
 
 
 @synthesize window=_window;

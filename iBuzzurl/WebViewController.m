@@ -1,6 +1,6 @@
 //
 //  WebViewController.m
-//  Buzzurl touch
+//  iBuzzurl
 //
 //  Created by Tatsuya Arai on 11/05/07.
 //  Copyright 2011 genesix, Inc. All rights reserved.
