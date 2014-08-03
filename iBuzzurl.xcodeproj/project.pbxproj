@@ -121,21 +121,21 @@
 		1890C3E0198E1058001815AF /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		1890C3E1198E1058001815AF /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		1890C3E2198E1058001815AF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../iBuzzurl/main.m; sourceTree = "<group>"; };
-		1890C3E3198E1058001815AF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../iBuzzurl/MainWindow.xib; sourceTree = "<group>"; };
-		1890C3E4198E1058001815AF /* RecentArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecentArticleViewController.h; path = ../iBuzzurl/RecentArticleViewController.h; sourceTree = "<group>"; };
-		1890C3E5198E1058001815AF /* RecentArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecentArticleViewController.m; path = ../iBuzzurl/RecentArticleViewController.m; sourceTree = "<group>"; };
-		1890C3E6198E1058001815AF /* RecentArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecentArticleViewController.xib; path = ../iBuzzurl/RecentArticleViewController.xib; sourceTree = "<group>"; };
-		1890C3E7198E1058001815AF /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../iBuzzurl/RootViewController.h; sourceTree = "<group>"; };
-		1890C3E8198E1058001815AF /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ../iBuzzurl/RootViewController.m; sourceTree = "<group>"; };
-		1890C3E9198E1058001815AF /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootViewController.xib; path = ../iBuzzurl/RootViewController.xib; sourceTree = "<group>"; };
-		1890C3EA198E1058001815AF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../iBuzzurl/SettingsViewController.h; sourceTree = "<group>"; };
-		1890C3EB198E1058001815AF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../iBuzzurl/SettingsViewController.m; sourceTree = "<group>"; };
-		1890C3EC198E1058001815AF /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ../iBuzzurl/SettingsViewController.xib; sourceTree = "<group>"; };
-		1890C3ED198E1058001815AF /* UIColor+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+NSString.h"; path = "../iBuzzurl/UIColor+NSString.h"; sourceTree = "<group>"; };
-		1890C3EE198E1058001815AF /* UIColor+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+NSString.m"; path = "../iBuzzurl/UIColor+NSString.m"; sourceTree = "<group>"; };
-		1890C3EF198E1058001815AF /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = ../iBuzzurl/WebViewController.h; sourceTree = "<group>"; };
-		1890C3F0198E1058001815AF /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = ../iBuzzurl/WebViewController.m; sourceTree = "<group>"; };
-		1890C3F1198E1058001815AF /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebViewController.xib; path = ../iBuzzurl/WebViewController.xib; sourceTree = "<group>"; };
+		1890C3E3198E1058001815AF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		1890C3E4198E1058001815AF /* RecentArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentArticleViewController.h; sourceTree = "<group>"; };
+		1890C3E5198E1058001815AF /* RecentArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentArticleViewController.m; sourceTree = "<group>"; };
+		1890C3E6198E1058001815AF /* RecentArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentArticleViewController.xib; sourceTree = "<group>"; };
+		1890C3E7198E1058001815AF /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		1890C3E8198E1058001815AF /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		1890C3E9198E1058001815AF /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		1890C3EA198E1058001815AF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		1890C3EB198E1058001815AF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		1890C3EC198E1058001815AF /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		1890C3ED198E1058001815AF /* UIColor+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NSString.h"; sourceTree = "<group>"; };
+		1890C3EE198E1058001815AF /* UIColor+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NSString.m"; sourceTree = "<group>"; };
+		1890C3EF198E1058001815AF /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		1890C3F0198E1058001815AF /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		1890C3F1198E1058001815AF /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		1890C41B198E109A001815AF /* iBuzzurlTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iBuzzurlTests-Info.plist"; sourceTree = "<group>"; };
 		1890C41C198E109A001815AF /* iBuzzurlTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iBuzzurlTests-Prefix.pch"; sourceTree = "<group>"; };
 		1890C41D198E109A001815AF /* iBuzzurl_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iBuzzurl_Tests.m; sourceTree = "<group>"; };
@@ -217,27 +217,11 @@
 		186781D213743AF0001D60A2 /* iBuzzurl */ = {
 			isa = PBXGroup;
 			children = (
-				1890C491198E127F001815AF /* iBuzzurlAppDelegate.m */,
-				1890C492198E127F001815AF /* iBuzzurlAppDelegate.h */,
-				1890C48A198E1135001815AF /* models */,
-				1890C48E198E1213001815AF /* Buzzurl.m */,
-				1890C48F198E1213001815AF /* Buzzurl.h */,
+				18E0C5AA198E4DD3008D6681 /* Categories */,
+				18E0C5AB198E50E9008D6681 /* AppDelegate */,
+				1890C48A198E1135001815AF /* Models */,
 				1890C3D6198E1058001815AF /* json-framework */,
-				1890C3E3198E1058001815AF /* MainWindow.xib */,
-				1890C3E4198E1058001815AF /* RecentArticleViewController.h */,
-				1890C3E5198E1058001815AF /* RecentArticleViewController.m */,
-				1890C3E6198E1058001815AF /* RecentArticleViewController.xib */,
-				1890C3E7198E1058001815AF /* RootViewController.h */,
-				1890C3E8198E1058001815AF /* RootViewController.m */,
-				1890C3E9198E1058001815AF /* RootViewController.xib */,
-				1890C3EA198E1058001815AF /* SettingsViewController.h */,
-				1890C3EB198E1058001815AF /* SettingsViewController.m */,
-				1890C3EC198E1058001815AF /* SettingsViewController.xib */,
-				1890C3ED198E1058001815AF /* UIColor+NSString.h */,
-				1890C3EE198E1058001815AF /* UIColor+NSString.m */,
-				1890C3EF198E1058001815AF /* WebViewController.h */,
-				1890C3F0198E1058001815AF /* WebViewController.m */,
-				1890C3F1198E1058001815AF /* WebViewController.xib */,
+				18E0C5AC198E50FF008D6681 /* ViewControllers */,
 				186781D313743AF0001D60A2 /* Supporting Files */,
 			);
 			path = iBuzzurl;
@@ -246,6 +230,7 @@
 		186781D313743AF0001D60A2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1890C3E3198E1058001815AF /* MainWindow.xib */,
 				1890C3D5198E1058001815AF /* Images.xcassets */,
 				1890C3C3198E1058001815AF /* images */,
 				1890C3BE198E1058001815AF /* Localizable.strings */,
@@ -321,13 +306,52 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1890C48A198E1135001815AF /* models */ = {
+		1890C48A198E1135001815AF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1890C48F198E1213001815AF /* Buzzurl.h */,
+				1890C48E198E1213001815AF /* Buzzurl.m */,
 				1890C48B198E118E001815AF /* Article.h */,
 				1890C48C198E119C001815AF /* Article.m */,
 			);
-			name = models;
+			name = Models;
+			sourceTree = "<group>";
+		};
+		18E0C5AA198E4DD3008D6681 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1890C3ED198E1058001815AF /* UIColor+NSString.h */,
+				1890C3EE198E1058001815AF /* UIColor+NSString.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		18E0C5AB198E50E9008D6681 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1890C492198E127F001815AF /* iBuzzurlAppDelegate.h */,
+				1890C491198E127F001815AF /* iBuzzurlAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		18E0C5AC198E50FF008D6681 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1890C3E4198E1058001815AF /* RecentArticleViewController.h */,
+				1890C3E5198E1058001815AF /* RecentArticleViewController.m */,
+				1890C3E6198E1058001815AF /* RecentArticleViewController.xib */,
+				1890C3E7198E1058001815AF /* RootViewController.h */,
+				1890C3E8198E1058001815AF /* RootViewController.m */,
+				1890C3E9198E1058001815AF /* RootViewController.xib */,
+				1890C3EA198E1058001815AF /* SettingsViewController.h */,
+				1890C3EB198E1058001815AF /* SettingsViewController.m */,
+				1890C3EC198E1058001815AF /* SettingsViewController.xib */,
+				1890C3EF198E1058001815AF /* WebViewController.h */,
+				1890C3F0198E1058001815AF /* WebViewController.m */,
+				1890C3F1198E1058001815AF /* WebViewController.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
