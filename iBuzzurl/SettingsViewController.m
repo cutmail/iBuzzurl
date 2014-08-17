@@ -79,9 +79,8 @@
     if (section == 0) {
         return NSLocalizedString(@"Account", @"Account");        
     }
-    else {
-        return nil;
-    }
+
+    return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

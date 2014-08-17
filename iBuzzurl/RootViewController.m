@@ -84,7 +84,7 @@
 - (void)showSettings
 {
     SettingsViewController *settingView = [[SettingsViewController alloc] init];
-    UINavigationController* navCon = [[UINavigationController alloc]
+    UINavigationController *navCon = [[UINavigationController alloc]
                                       initWithRootViewController:settingView];
     
     [self.navigationController presentViewController:navCon animated:YES completion:nil];
@@ -96,7 +96,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60.0;
+    return 60.f;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -106,7 +106,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _articleList ? [_articleList count] : 0;
+    return _articleList ? _articleList.count : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -118,7 +118,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    Article* article = _articleList[[indexPath row]];
+    Article *article = _articleList[indexPath.row];
     
     cell.textLabel.text = article.title;
     cell.textLabel.textColor = [UIColor darkGrayColor];
@@ -135,7 +135,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    Article* article = _articleList[[indexPath row]];
+    Article *article = _articleList[indexPath.row];
     
     WebViewController *controller = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
     controller.hidesBottomBarWhenPushed = YES;
