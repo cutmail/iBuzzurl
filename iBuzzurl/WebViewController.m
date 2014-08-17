@@ -8,7 +8,6 @@
 
 #import "WebViewController.h"
 
-#import "UIColor+NSString.h"
 #import "NJKWebViewProgressView.h"
 #import "TUSafariActivity.h"
 

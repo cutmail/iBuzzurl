@@ -13,7 +13,6 @@
 #import "Article.h"
 #import "Buzzurl.h"
 #import "TDBadgedCell.h"
-#import "UIColor+NSString.h"
 
 @interface RecentArticleViewController ()
 @property (nonatomic) UIRefreshControl *refreshControl;

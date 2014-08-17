@@ -12,7 +12,6 @@
 #import "JSON.h"
 #import "Article.h"
 #import "Buzzurl.h"
-#import "UIColor+NSString.h"
 
 @interface RootViewController ()
 @property (nonatomic) UIRefreshControl *refreshControl;

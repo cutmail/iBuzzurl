@@ -8,7 +8,6 @@
 
 #import "SettingsViewController.h"
 #import "SFHFKeychainUtils.h"
-#import "UIColor+NSString.h"
 #import "AAMFeedbackViewController.h"
 
 @implementation SettingsViewController
