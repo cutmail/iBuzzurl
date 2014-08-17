@@ -57,6 +57,16 @@
                                                initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveUserInfo)];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName
+           value:@"Settings"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

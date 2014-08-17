@@ -2,6 +2,7 @@ PODS:
   - AAMFeedback (0.2.0):
     - UIDeviceIdentifier
   - CrashlyticsFramework (2.2.2)
+  - GoogleAnalytics-iOS-SDK (3.0.9)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core
     - NJKWebViewProgress/ProgressView
@@ -15,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - AAMFeedback (from `https://github.com/azu/AAMFeedback.git`)
   - CrashlyticsFramework
+  - GoogleAnalytics-iOS-SDK
   - NJKWebViewProgress
   - SFHFKeychainUtils
   - TDBadgedCell
@@ -27,6 +29,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AAMFeedback: 68f815343be58ee6afab6c49903254ddff7d58fd
   CrashlyticsFramework: bce4c0e83b50f22aafde946b41a34a6b8ca7acd0
+  GoogleAnalytics-iOS-SDK: d9e198b1f955259a72886769be7377cdfcdb2250
   NJKWebViewProgress: 721b57080c840c76f70ff6c2dda4f836ee1b27c1
   SFHFKeychainUtils: 6fdda05a86d035db406c7662ec1054814b68f0fd
   TDBadgedCell: e683b5557d12ea4e28a8d6ac20b6e394abc2c1fe

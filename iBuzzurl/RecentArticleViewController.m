@@ -62,6 +62,16 @@
     [self loadNewData];    
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName
+           value:@"RecentArticle"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 - (BOOL)isLogin
 {
     NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];

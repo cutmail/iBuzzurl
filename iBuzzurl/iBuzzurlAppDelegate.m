@@ -21,6 +21,13 @@
     return YES;
 }
 
+- (void)setupGoogleAnalytics
+{
+    [GAI sharedInstance].dispatchInterval = 20;
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-3314949-21"];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

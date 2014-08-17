@@ -89,6 +89,16 @@
     [self.navigationController.navigationBar addSubview:_progressView];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName
+           value:@"WebView"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
