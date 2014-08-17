@@ -39,11 +39,6 @@
 		1890C407198E1058001815AF /* iconBrowsePrev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1890C3D3198E1058001815AF /* iconBrowsePrev@2x.png */; };
 		1890C408198E1058001815AF /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 1890C3D4198E1058001815AF /* iTunesArtwork */; };
 		1890C409198E1058001815AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1890C3D5198E1058001815AF /* Images.xcassets */; };
-		1890C40A198E1058001815AF /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890C3D9198E1058001815AF /* NSObject+SBJSON.m */; };
-		1890C40B198E1058001815AF /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890C3DB198E1058001815AF /* NSString+SBJSON.m */; };
-		1890C40C198E1058001815AF /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890C3DD198E1058001815AF /* SBJsonBase.m */; };
-		1890C40D198E1058001815AF /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890C3DF198E1058001815AF /* SBJsonParser.m */; };
-		1890C40E198E1058001815AF /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890C3E1198E1058001815AF /* SBJsonWriter.m */; };
 		1890C40F198E1058001815AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890C3E2198E1058001815AF /* main.m */; };
 		1890C411198E1058001815AF /* RecentArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890C3E5198E1058001815AF /* RecentArticleViewController.m */; };
 		1890C412198E1058001815AF /* RecentArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1890C3E6198E1058001815AF /* RecentArticleViewController.xib */; };
@@ -110,17 +105,6 @@
 		1890C3D3198E1058001815AF /* iconBrowsePrev@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBrowsePrev@2x.png"; sourceTree = "<group>"; };
 		1890C3D4198E1058001815AF /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		1890C3D5198E1058001815AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1890C3D7198E1058001815AF /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		1890C3D8198E1058001815AF /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		1890C3D9198E1058001815AF /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		1890C3DA198E1058001815AF /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		1890C3DB198E1058001815AF /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		1890C3DC198E1058001815AF /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		1890C3DD198E1058001815AF /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		1890C3DE198E1058001815AF /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		1890C3DF198E1058001815AF /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		1890C3E0198E1058001815AF /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		1890C3E1198E1058001815AF /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		1890C3E2198E1058001815AF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../iBuzzurl/main.m; sourceTree = "<group>"; };
 		1890C3E4198E1058001815AF /* RecentArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentArticleViewController.h; sourceTree = "<group>"; };
 		1890C3E5198E1058001815AF /* RecentArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentArticleViewController.m; sourceTree = "<group>"; };
@@ -220,7 +204,6 @@
 				18E0C5AA198E4DD3008D6681 /* Categories */,
 				18E0C5AB198E50E9008D6681 /* Application Delegate */,
 				1890C48A198E1135001815AF /* Models */,
-				1890C3D6198E1058001815AF /* json-framework */,
 				18E0C5AC198E50FF008D6681 /* ViewControllers */,
 				1827DCEA198E836F001380AE /* MainStoryboard.storyboard */,
 				186781D313743AF0001D60A2 /* Supporting Files */,
@@ -266,25 +249,6 @@
 			);
 			name = images;
 			path = ../iBuzzurl/images;
-			sourceTree = "<group>";
-		};
-		1890C3D6198E1058001815AF /* json-framework */ = {
-			isa = PBXGroup;
-			children = (
-				1890C3D7198E1058001815AF /* JSON.h */,
-				1890C3D8198E1058001815AF /* NSObject+SBJSON.h */,
-				1890C3D9198E1058001815AF /* NSObject+SBJSON.m */,
-				1890C3DA198E1058001815AF /* NSString+SBJSON.h */,
-				1890C3DB198E1058001815AF /* NSString+SBJSON.m */,
-				1890C3DC198E1058001815AF /* SBJsonBase.h */,
-				1890C3DD198E1058001815AF /* SBJsonBase.m */,
-				1890C3DE198E1058001815AF /* SBJsonParser.h */,
-				1890C3DF198E1058001815AF /* SBJsonParser.m */,
-				1890C3E0198E1058001815AF /* SBJsonWriter.h */,
-				1890C3E1198E1058001815AF /* SBJsonWriter.m */,
-			);
-			name = "json-framework";
-			path = "../iBuzzurl/json-framework";
 			sourceTree = "<group>";
 		};
 		1890C41A198E109A001815AF /* iBuzzurlTests */ = {
@@ -541,10 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1890C40D198E1058001815AF /* SBJsonParser.m in Sources */,
 				1890C48D198E119C001815AF /* Article.m in Sources */,
-				1890C40A198E1058001815AF /* NSObject+SBJSON.m in Sources */,
-				1890C40B198E1058001815AF /* NSString+SBJSON.m in Sources */,
 				1890C40F198E1058001815AF /* main.m in Sources */,
 				1890C411198E1058001815AF /* RecentArticleViewController.m in Sources */,
 				1890C417198E1058001815AF /* UIColor+NSString.m in Sources */,
@@ -552,8 +513,6 @@
 				1890C418198E1058001815AF /* WebViewController.m in Sources */,
 				1890C493198E127F001815AF /* iBuzzurlAppDelegate.m in Sources */,
 				1890C413198E1058001815AF /* RootViewController.m in Sources */,
-				1890C40E198E1058001815AF /* SBJsonWriter.m in Sources */,
-				1890C40C198E1058001815AF /* SBJsonBase.m in Sources */,
 				1890C415198E1058001815AF /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

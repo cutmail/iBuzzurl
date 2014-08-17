@@ -7,7 +7,6 @@
 //
 
 #import "Buzzurl.h"
-#import "JSON.h"
 #import "Article.h"
 
 #define BUZZURL_URL_RECENT_ARTICLE @"http://api.buzzurl.jp/api/articles/recent/v1/json?num=20&threshold=5"
@@ -31,53 +30,53 @@
     return result;
 }
 
-+ (NSMutableArray *)getRecentArticle {
++ (NSMutableArray *)getRecentArticle
+{
     NSMutableArray *resultList = [[NSMutableArray alloc] init];
     
     NSString *url = BUZZURL_URL_RECENT_ARTICLE;
-    NSString *jsonString = [[NSString alloc] initWithData:[self getData:url]
-                                                  encoding:NSUTF8StringEncoding];
     
-    if ([[jsonString JSONValue] isKindOfClass:[NSDictionary class]]) { 
-        NSDictionary *dicData = [jsonString JSONValue];
-        
-        if ([dicData[@"status"] isEqualToString:@"fail"]) {
-        }
-    } else {
-        NSArray *articles = [jsonString JSONValue];
-        
-        for (NSDictionary *articleDic in articles) {
-            Article* article = [[Article alloc] initWithDictionary:articleDic];
-            [resultList addObject:article];
-        }
-        return resultList;            
+    NSData *data = [self getData:url];
+    
+    if (!data) {
+        return nil;
     }
-    return nil;
+   
+    NSError *error;
+    id json = [NSJSONSerialization JSONObjectWithData:data
+                                              options:0
+                                                 error:&error];
+    
+    for (NSDictionary *articleDic in json) {
+        Article* article = [[Article alloc] initWithDictionary:articleDic];
+        [resultList addObject:article];
+    }
+    return resultList;            
 }
 
-+ (NSMutableArray *)getUserRecentArticle {
++ (NSMutableArray *)getUserRecentArticle
+{
     NSMutableArray *resultList = [[NSMutableArray alloc] init];
     
     NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERNAME"];
     NSString *url = [NSString stringWithFormat:BUZZURL_URL_USER_RECENT_ARTICLE, username];
-    NSString *jsonString = [[NSString alloc] initWithData:[self getData:url]
-                                                  encoding:NSUTF8StringEncoding];
     
-    if ([[jsonString JSONValue] isKindOfClass:[NSDictionary class]]) { 
-        NSDictionary *dicData = [jsonString JSONValue];
-        
-        if ([dicData[@"status"] isEqualToString:@"fail"]) {
-        }
-    } else {
-        NSArray *articles = [jsonString JSONValue];
-        
-        for (NSDictionary *articleDic in articles) {
-            Article* article = [[Article alloc] initWithDictionary:articleDic];
-            [resultList addObject:article];
-        }
-        return resultList;            
+    NSData *data = [self getData:url];
+    
+    if (!data) {
+        return nil;
     }
-    return nil;
+    
+    NSError *error;
+    id json = [NSJSONSerialization JSONObjectWithData:data
+                                              options:0
+                                                error:&error];
+    
+    for (NSDictionary *articleDic in json) {
+        Article* article = [[Article alloc] initWithDictionary:articleDic];
+        [resultList addObject:article];
+    }
+    return resultList;            
 }
 
 @end
