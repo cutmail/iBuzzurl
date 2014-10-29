@@ -7,7 +7,9 @@
 //
 
 #import "iBuzzurlAppDelegate.h"
+#import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+
 
 @implementation iBuzzurlAppDelegate
 
@@ -16,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Crashlytics startWithAPIKey:@"7d0f3ef6938723ac69b416c2f9d0cfa7f9ae7437"];
+    [Fabric with:@[CrashlyticsKit]];
     
     return YES;
 }
