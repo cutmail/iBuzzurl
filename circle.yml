@@ -1,0 +1,12 @@
+machine:
+  environment:
+    PATH: $PATH:/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support
+    LC_CTYPE: en_US.UTF-8
+
+dependencies:
+  override:
+    - sudo gem install xcpretty
+
+test:
+  override:
+    - rake
