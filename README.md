@@ -1,6 +1,6 @@
 iBuzzurl
 ========
 
-[![Build Status](https://travis-ci.org/cutmail/iBuzzurl.svg?branch=develop)](https://travis-ci.org/cutmail/iBuzzurl)
+[![Circle CI](https://circleci.com/gh/cutmail/iBuzzurl.svg?style=svg)](https://circleci.com/gh/cutmail/iBuzzurl)
 
 Buzzurl for iOS
